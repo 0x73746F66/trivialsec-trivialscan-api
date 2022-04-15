@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+unset TF_VAR_rapidapi_token
+reset

@@ -1,0 +1,8 @@
+setuptools
+semgrep
+bandit
+autopep8
+pylint
+pytest
+coverage
+boto3

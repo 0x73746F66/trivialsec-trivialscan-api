@@ -1,13 +1,75 @@
-# You can override the included template(s) by including variable overrides
-# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
-# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
-# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
-# Container Scanning customization: https://docs.gitlab.com/ee/user/application_security/container_scanning/#customizing-the-container-scanning-settings
-# Note that environment variables can be set in several places
-# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
+variables:
+  TF_VAR_app_env: Prod
+
+include:
+  - template: Security/SAST.gitlab-ci.yml
+
+before_script:
+  - touch .env
+  - make --version
+  - terraform --version
+  - aws --version
+
 stages:
-- test
+  - test
+  - plan
+  - apply
+
 sast:
   stage: test
-include:
-- template: Security/SAST.gitlab-ci.yml
+
+tf:plan:
+  retry: 2
+  tags:
+    - linode
+  stage: plan
+  script:
+    - make plan
+  only:
+    refs:
+      - merge_request
+      - main
+  artifacts:
+    name: tfplan
+    paths:
+      - plans/.tfplan
+    reports:
+      terraform: plans/tfplan.json
+
+tf:apply:
+  retry: 2
+  tags:
+    - linode
+  stage: apply
+  script:
+    - make apply
+  only:
+    refs:
+      - main
+  environment:
+    name: aws
+    url: https://sso.jumpcloud.com/saml2/aws1
+    on_stop: tf:destroy
+  dependencies:
+    - tf:plan
+  when: manual
+
+tf:destroy:
+  retry: 2
+  stage: apply
+  variables:
+    GIT_STRATEGY: none
+  tags:
+    - linode
+  script:
+    - make destroy
+  when: manual
+  environment:
+    name: aws
+    action: stop
+  artifacts:
+    name: tfdestroy
+    paths:
+      - plans/.tfdestroy
+    reports:
+      terraform: plans/tfdestroy.json
