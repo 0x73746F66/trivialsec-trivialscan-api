@@ -55,10 +55,10 @@ def lambda_handler(event, context):
     rapidapi_proxy_secret = event['headers'].get('x-rapidapi-proxy-secret', 'default deny')
     rapidapi_token = ssm_secret(f'/{APP_ENV}/Deploy/{APP_NAME}/rapidapi_token', WithDecryption=True)
     if rapidapi_token != rapidapi_proxy_secret:
+        logger.warning(f'x-rapidapi-token {rapidapi_token} {rapidapi_proxy_secret}')
         return {
             'statusCode': 403,
             'headers': {
-                'x-rapidapi-token': f'{rapidapi_token} {rapidapi_proxy_secret}',
                 'WWW-Authenticate': 'Bearer realm="rapidapi" error="invalid_token"'
             }
         }

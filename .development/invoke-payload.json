@@ -4,9 +4,7 @@
     "rawPath": "/ssllabs.com",
     "rawQueryString": "",
     "cookies": [],
-    "headers": {
-        "x-rapidapi-proxy-secret": "letmein"
-    },
+    "headers": {},
     "queryStringParameters": {},
     "requestContext": {
         "accountId": "123456789012",
