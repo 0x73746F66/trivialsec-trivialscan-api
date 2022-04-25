@@ -1,4 +1,4 @@
-FROM amazon/aws-lambda-python:latest
+FROM public.ecr.aws/lambda/python:3.9
 
 LABEL org.opencontainers.image.authors="Christopher Langton"
 LABEL org.opencontainers.image.version="0.0.1"

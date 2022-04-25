@@ -25,6 +25,23 @@ repos:
         args: ["--no-allow-dict-kwargs"]
       - id: debug-statements
 
+  - repo: https://github.com/homebysix/pre-commit-macadmin
+    rev: v1.12.3
+    hooks:
+      - id: check-git-config-email
+        args: ["--domains", "trivialsec.com"]
+
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.7.0
+    hooks:
+      - id: typos
+        files: src
+
+  - repo: https://github.com/APIDevTools/swagger-cli
+    rev: v4.0.4
+    hooks:
+      - id: swagger-validation
+
   - repo: https://github.com/Lucas-C/pre-commit-hooks
     rev: v1.1.13
     hooks:
@@ -80,6 +97,11 @@ repos:
     rev: v1.2.4
     hooks:
       - id: python-safety-dependencies-check
+
+  - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
+    rev: v0.1.0
+    hooks:
+      - id: dockerfilelint
 
   - repo: https://github.com/mattlqx/pre-commit-sign
     rev: v1.1.3

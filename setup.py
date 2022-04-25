@@ -15,7 +15,6 @@ setup(
     author='Christopher Langton',
     author_email='chris@trivialsec.com',
     description='Validate the security of your TLS connections so that they deserve your trust.',
-    long_description_content_type='text/markdown',
     url='https://gitlab.com/trivialsec/trivialscan-api',
     project_urls={
         'Source': 'https://gitlab.com/trivialsec/trivialscan-api',
