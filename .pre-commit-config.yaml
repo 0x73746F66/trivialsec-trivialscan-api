@@ -1,20 +1,34 @@
 ---
 exclude: "^{{cookiecutter\\.project_name}}/"
 default_language_version:
-    python: python3.10
+  python: python3.10
 
 repos:
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.32.0
+    hooks:
+      - id: pyupgrade
+        args: [--py37-plus]
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.1.0
     hooks:
+      - id: check-ast
+        files: src
+      - id: check-merge-conflict
       - id: check-yaml
       - id: check-json
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: check-added-large-files
       - id: check-builtin-literals
-        args: ['--no-allow-dict-kwargs']
+        args: ["--no-allow-dict-kwargs"]
       - id: debug-statements
+
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.1.13
+    hooks:
+      - id: remove-tabs
 
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v2.5.1
@@ -60,4 +74,15 @@ repos:
         name: Detect secrets
         language: python
         entry: detect-secrets-hook
-        args: ['--baseline', '.secrets.baseline']
+        args: ["--baseline", ".secrets.baseline"]
+
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.2.4
+    hooks:
+      - id: python-safety-dependencies-check
+        files: setup.py
+
+  - repo: https://github.com/mattlqx/pre-commit-sign
+    rev: v1.1.3
+    hooks:
+      - id: sign-commit

@@ -16,7 +16,7 @@ help: ## This help.
 setup:
 	pip install -e .
 	pip install -r -U requirements-dev.txt
-	pre-commit install --hook-type pre-push
+	pre-commit install --hook-type pre-push --hook-type pre-commit
 	detect-secrets scan > .secrets.baseline
 
 prep: ## Cleanup tmp files
