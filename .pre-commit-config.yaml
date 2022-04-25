@@ -80,7 +80,6 @@ repos:
     rev: v1.2.4
     hooks:
       - id: python-safety-dependencies-check
-        files: setup.py
 
   - repo: https://github.com/mattlqx/pre-commit-sign
     rev: v1.1.3
