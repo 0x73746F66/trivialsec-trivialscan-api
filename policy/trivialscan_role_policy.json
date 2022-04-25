@@ -11,18 +11,13 @@
       "Effect": "Allow"
     },
     {
-        "Effect": "Allow",
-        "Action": [
-            "s3:GetObject",
-            "s3:PutObject"
-        ],
-        "Resource": "arn:aws:s3:::${asset_bucket}/*"
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:PutObject"],
+      "Resource": "arn:aws:s3:::${asset_bucket}/*"
     },
     {
       "Effect": "Allow",
-      "Action": [
-        "ssm:GetParameter"
-      ],
+      "Action": ["ssm:GetParameter"],
       "Resource": [
         "arn:aws:ssm:ap-southeast-2:984310022655:parameter/${app_env}/Deploy/${app_name}/rapidapi_token"
       ]

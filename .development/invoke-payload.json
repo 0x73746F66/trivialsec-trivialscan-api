@@ -1,33 +1,33 @@
 {
-    "version": "2.0",
-    "routeKey": "$default",
-    "rawPath": "/ssllabs.com",
-    "rawQueryString": "",
-    "cookies": [],
-    "headers": {},
-    "queryStringParameters": {},
-    "requestContext": {
-        "accountId": "123456789012",
-        "apiId": "urtmmy4dfvbek7dtsub23ogvpe0trlog",
-        "authentication": null,
-        "authorizer": {},
-        "domainName": "urtmmy4dfvbek7dtsub23ogvpe0trlog.lambda-url.ap-southeast-2.on.aws",
-        "domainPrefix": "urtmmy4dfvbek7dtsub23ogvpe0trlog",
-        "http": {
-            "method": "GET",
-            "path": "/ssllabs.com",
-            "protocol": "HTTP/1.1",
-            "sourceIp": "123.123.123.123",
-            "userAgent": "agent"
-        },
-        "requestId": "id",
-        "routeKey": "$default",
-        "stage": "$default",
-        "time": "12/Mar/2020:19:03:58 +0000",
-        "timeEpoch": 1583348638390
+  "version": "2.0",
+  "routeKey": "$default",
+  "rawPath": "/ssllabs.com",
+  "rawQueryString": "",
+  "cookies": [],
+  "headers": {},
+  "queryStringParameters": {},
+  "requestContext": {
+    "accountId": "123456789012",
+    "apiId": "urtmmy4dfvbek7dtsub23ogvpe0trlog",
+    "authentication": null,
+    "authorizer": {},
+    "domainName": "urtmmy4dfvbek7dtsub23ogvpe0trlog.lambda-url.ap-southeast-2.on.aws",
+    "domainPrefix": "urtmmy4dfvbek7dtsub23ogvpe0trlog",
+    "http": {
+      "method": "GET",
+      "path": "/ssllabs.com",
+      "protocol": "HTTP/1.1",
+      "sourceIp": "123.123.123.123",
+      "userAgent": "agent"
     },
-    "body": "",
-    "pathParameters": null,
-    "isBase64Encoded": false,
-    "stageVariables": null
+    "requestId": "id",
+    "routeKey": "$default",
+    "stage": "$default",
+    "time": "12/Mar/2020:19:03:58 +0000",
+    "timeEpoch": 1583348638390
+  },
+  "body": "",
+  "pathParameters": null,
+  "isBase64Encoded": false,
+  "stageVariables": null
 }
