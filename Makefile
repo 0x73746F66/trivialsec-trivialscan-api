@@ -13,6 +13,12 @@ help: ## This help.
 
 .DEFAULT_GOAL := help
 
+setup:
+	pip install -e .
+	pip install -r -U requirements-dev.txt
+	pre-commit install --hook-type pre-push
+	detect-secrets scan > .secrets.baseline
+
 prep: ## Cleanup tmp files
 	@find . -type f -name '*.pyc' -delete 2>/dev/null
 	@find . -type d -name '__pycache__' -delete 2>/dev/null

@@ -1,4 +1,5 @@
 setuptools
+wheel
 semgrep
 bandit
 autopep8
@@ -6,3 +7,8 @@ pylint
 pytest
 coverage
 boto3
+typed-ast
+black
+pre-commit
+checkov
+detect-secrets

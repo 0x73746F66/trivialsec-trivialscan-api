@@ -1,833 +1,822 @@
 {
-    "openapi": "3.0.2",
-    "info": {
-        "title": "Trivial Scanner - SSL/TLS DNS HTTP Analyser - Qualys SSL Labs alternative",
-        "version": "0.0.1"
-    },
-    "servers": [
-        {
-            "url": "https://psmv7p7m4dccsmda3ilsjchleu0epoiw.lambda-url.ap-southeast-2.on.aws/"
-        }
-    ],
-    "paths": {
-        "/{host}": {
-            "get": {
-                "summary": "Query Host",
-                "description": "Provide a domain name as the target host to query the SSL/TLS configuration and verify root trust",
-                "operationId": "query_host",
-                "parameters": [
-                    {
-                        "description": "target domain name",
-                        "required": true,
-                        "schema": {
-                            "title": "Domain Name",
-                            "type": "string",
-                            "description": "target domain name"
-                        },
-                        "name": "host",
-                        "in": "path"
-                    },
-                    {
-                        "required": false,
-                        "schema": {
-                            "title": "Port number",
-                            "maximum": 49151.0,
-                            "minimum": 1.0,
-                            "type": "integer",
-                            "default": 443
-                        },
-                        "name": "port",
-                        "in": "query"
-                    },
-                    {
-                        "required": false,
-                        "schema": {
-                            "title": "Control if SNI is utilised",
-                            "type": "boolean",
-                            "default": true
-                        },
-                        "name": "use_sni",
-                        "in": "query"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successfully retrieved information of the domain",
-                        "content": {
-                            "application/json": {
-                                "schema": {},
-                                "example": {
-                                    "date": "2022-04-14T03:21:22",
-                                    "evaluation_duration_seconds": 55.546247,
-                                    "generator": "trivialscan==2.3.1",
-                                    "validations": [
-                                        {
-                                            "certificate_authority_key_identifier": "03de503556d14cbb66f0a3e21b1bc397b23dd155",
-                                            "certificate_common_name": "DigiCert TLS RSA SHA256 2020 CA1",
-                                            "certificate_expired": false,
-                                            "certificate_extensions": [
-                                                {
-                                                    "ca": true,
-                                                    "critical": true,
-                                                    "name": "basicConstraints",
-                                                    "path_length": 0
-                                                },
-                                                {
-                                                    "critical": false,
-                                                    "name": "subjectKeyIdentifier",
-                                                    "subjectKeyIdentifier": "b76ba2eaa8aa848c79eab4da0f98b2c59576b9f4"
-                                                },
-                                                {
-                                                    "authorityKeyIdentifier": "03de503556d14cbb66f0a3e21b1bc397b23dd155",
-                                                    "authority_cert_issuer": "",
-                                                    "authority_cert_serial_number": null,
-                                                    "critical": false,
-                                                    "name": "authorityKeyIdentifier"
-                                                },
-                                                {
-                                                    "content_commitment": false,
-                                                    "critical": true,
-                                                    "crl_sign": true,
-                                                    "data_encipherment": false,
-                                                    "digital_signature": true,
-                                                    "keyUsage": [
-                                                        "digital_signature",
-                                                        "key_cert_sign",
-                                                        "crl_sign"
-                                                    ],
-                                                    "key_agreement": false,
-                                                    "key_cert_sign": true,
-                                                    "key_encipherment": false,
-                                                    "name": "keyUsage"
-                                                },
-                                                {
-                                                    "critical": false,
-                                                    "extendedKeyUsage": [
-                                                        "serverAuth",
-                                                        "clientAuth"
-                                                    ],
-                                                    "name": "extendedKeyUsage"
-                                                },
-                                                {
-                                                    "authorityInfoAccess": [
-                                                        {
-                                                            "access_location": "http://ocsp.digicert.com",
-                                                            "access_method": "OCSP"
-                                                        },
-                                                        {
-                                                            "access_location": "http://cacerts.digicert.com/DigiCertGlobalRootCA.crt",
-                                                            "access_method": "caIssuers"
-                                                        }
-                                                    ],
-                                                    "critical": false,
-                                                    "name": "authorityInfoAccess"
-                                                },
-                                                {
-                                                    "cRLDistributionPoints": [
-                                                        {
-                                                            "crl_issuer": "",
-                                                            "full_name": "http://crl3.digicert.com/DigiCertGlobalRootCA.crl",
-                                                            "reasons": null,
-                                                            "relative_name": null
-                                                        }
-                                                    ],
-                                                    "critical": false,
-                                                    "name": "cRLDistributionPoints"
-                                                },
-                                                {
-                                                    "critical": false,
-                                                    "name": "certificatePolicies"
-                                                }
-                                            ],
-                                            "certificate_intermediate_ca": true,
-                                            "certificate_is_self_signed": false,
-                                            "certificate_issuer": "DigiCert Global Root CA",
-                                            "certificate_issuer_country": "US",
-                                            "certificate_key_compromised": false,
-                                            "certificate_known_compromised": false,
-                                            "certificate_md5_fingerprint": "e67b586f7046bfe0aa51f6660b119dd9",
-                                            "certificate_not_after": "2031-04-13T23:59:59",
-                                            "certificate_not_before": "2021-04-14T00:00:00",
-                                            "certificate_private_key_pem": "-----BEGIN PRIVATE KEY-----\nMIIBJwIBADANBgkqhkiG9w0BAQEFAASCAREwggENAgEAAoIBAQDBS7NlR3C83U9Y\n2+yc7cNm5R8xE1StSmZGHywK7GQH5S7c3LkKIO3f48TQnpqpeh2CiOURVtsen1jC\nUecsNA0u0pLhVsvxeV+zu4fKJQN7mlJBZhBgT1cTSfDoN2eD3+fTS2dMIlGm3w6Z\nEO1XUXQm4n3HymIuExt/I4glU2/BNFgAi4T/+L6nWEkie5atooibFbygfN/pUajV\nsO034ja0gktitUma7Mdn1uM+9ePWEl5E8b9xQn1YhAOAsYEB+vnKMru0jieHJ8Ur\ndNSo1pfew2T5ys5Tola8eBeOSQMprvtJT6QVuc7yXBlXbWt5pyuiJyATtdA9QNMh\nMAeT6pn1AgMBAAE=\n-----END PRIVATE KEY-----\n",
-                                            "certificate_public_key_curve": "",
-                                            "certificate_public_key_exponent": 65537,
-                                            "certificate_public_key_size": 2048,
-                                            "certificate_public_key_type": "RSA",
-                                            "certificate_root_ca": false,
-                                            "certificate_san": [],
-                                            "certificate_serial_number": "30:36:64:38:64:39:30:34:64:35:35:38:34:33:34:36:66:36:38:61:32:66:61:37:35:34:32:32:37:65:63:34",
-                                            "certificate_serial_number_decimal": 9101305761976670746388865003982847684,
-                                            "certificate_serial_number_hex": "0x6d8d904d5584346f68a2fa754227ec4",
-                                            "certificate_sha1_fingerprint": "1c58a3a8518e8759bf075b76b750d4f2df264fcd",
-                                            "certificate_sha256_fingerprint": "52274c57ce4dee3b49db7a7ff708c040f771898b3be88725a86fb4430182fe14",
-                                            "certificate_signature_algorithm": "sha256WithRSAEncryption",
-                                            "certificate_spki_fingerprint": "450799901e36ce751fb0320815621189811c2a5ee71f0345c160ab9cc3096d57",
-                                            "certificate_subject": "/C=US/O=DigiCert Inc/CN=DigiCert TLS RSA SHA256 2020 CA1",
-                                            "certificate_subject_key_identifier": "b76ba2eaa8aa848c79eab4da0f98b2c59576b9f4",
-                                            "certificate_type": "Intermediate CA",
-                                            "certificate_valid": true,
-                                            "certificate_validation_oid": "2.23.140.1.2.3",
-                                            "certificate_validation_type": "Extended Validation (EV)",
-                                            "certificate_version": 2,
-                                            "certification_authority_authorization": false,
-                                            "client_certificate_expected": false,
-                                            "client_renegotiation": false,
-                                            "compliance_results": {
-                                                "fips_weak_key": true,
-                                                "nist_weak_key": true,
-                                                "pci_weak_key": true
-                                            },
-                                            "compression_support": false,
-                                            "dnssec": false,
-                                            "dnssec_algorithm": "",
-                                            "expiry_status": "Expires in 3286 days (9 years)",
-                                            "forward_anonymity": false,
-                                            "host": "",
-                                            "http1_1_support": false,
-                                            "http1_support": false,
-                                            "http2_cleartext_support": false,
-                                            "http2_support": false,
-                                            "http_coep": false,
-                                            "http_coop": false,
-                                            "http_corp": false,
-                                            "http_csp": false,
-                                            "http_expect_ct_report_uri": false,
-                                            "http_hsts": false,
-                                            "http_nosniff": false,
-                                            "http_status_code": 0,
-                                            "http_unsafe_referrer": false,
-                                            "http_xfo": false,
-                                            "http_xss_protection": false,
-                                            "negotiated_cipher": "",
-                                            "negotiated_cipher_bits": 0,
-                                            "negotiated_protocol": "",
-                                            "offered_ciphers": [],
-                                            "offered_tls_versions": [],
-                                            "peer_address": "",
-                                            "port": 443,
-                                            "possible_phish_or_malicious": false,
-                                            "preferred_protocol": "",
-                                            "revocation_crlite": false,
-                                            "revocation_ocsp_must_staple": false,
-                                            "revocation_ocsp_reason": "",
-                                            "revocation_ocsp_response": "",
-                                            "revocation_ocsp_stapling": false,
-                                            "revocation_ocsp_status": "",
-                                            "revocation_ocsp_time": "",
-                                            "scsv": false,
-                                            "session_resumption_caching": false,
-                                            "session_resumption_ticket_hint": false,
-                                            "session_resumption_tickets": false,
-                                            "sni_support": false,
-                                            "strong_cipher": false,
-                                            "tls_long_handshake_intolerance": false,
-                                            "tls_version_interference": false,
-                                            "tls_version_interference_versions": [],
-                                            "tls_version_intolerance": false,
-                                            "tls_version_intolerance_versions": [],
-                                            "tlsa": false,
-                                            "trust_android": false,
-                                            "trust_android_status": "",
-                                            "trust_ccadb": false,
-                                            "trust_ccadb_status": "",
-                                            "trust_certifi": false,
-                                            "trust_certifi_status": "",
-                                            "trust_java": false,
-                                            "trust_java_status": "",
-                                            "trust_linux": false,
-                                            "trust_linux_status": "",
-                                            "trust_russia": false,
-                                            "trust_russia_status": "",
-                                            "verification_details": [
-                                                "Your private key is exposed; Attackers in possession of the private key can impersonate the website, eavesdrop on encrypted traffic they have copied, or digitally sign malware on your behalf and distribute to target systems as you identified as the attacker"
-                                            ],
-                                            "verification_results": {
-                                                "avoid_known_weak_keys": true,
-                                                "avoid_known_weak_signature_algorithm": true,
-                                                "common_name_defined": true,
-                                                "issued_past_tense": true,
-                                                "not_expired": true,
-                                                "not_revoked": true,
-                                                "not_self_signed": true
-                                            },
-                                            "weak_cipher": false
-                                        },
-                                        {
-                                            "certificate_authority_key_identifier": "03de503556d14cbb66f0a3e21b1bc397b23dd155",
-                                            "certificate_common_name": "DigiCert Global Root CA",
-                                            "certificate_expired": false,
-                                            "certificate_extensions": [
-                                                {
-                                                    "content_commitment": false,
-                                                    "critical": true,
-                                                    "crl_sign": true,
-                                                    "data_encipherment": false,
-                                                    "digital_signature": true,
-                                                    "keyUsage": [
-                                                        "digital_signature",
-                                                        "key_cert_sign",
-                                                        "crl_sign"
-                                                    ],
-                                                    "key_agreement": false,
-                                                    "key_cert_sign": true,
-                                                    "key_encipherment": false,
-                                                    "name": "keyUsage"
-                                                },
-                                                {
-                                                    "ca": true,
-                                                    "critical": true,
-                                                    "name": "basicConstraints",
-                                                    "path_length": null
-                                                },
-                                                {
-                                                    "critical": false,
-                                                    "name": "subjectKeyIdentifier",
-                                                    "subjectKeyIdentifier": "03de503556d14cbb66f0a3e21b1bc397b23dd155"
-                                                },
-                                                {
-                                                    "authorityKeyIdentifier": "03de503556d14cbb66f0a3e21b1bc397b23dd155",
-                                                    "authority_cert_issuer": "",
-                                                    "authority_cert_serial_number": null,
-                                                    "critical": false,
-                                                    "name": "authorityKeyIdentifier"
-                                                }
-                                            ],
-                                            "certificate_intermediate_ca": false,
-                                            "certificate_is_self_signed": false,
-                                            "certificate_issuer": "DigiCert Global Root CA",
-                                            "certificate_issuer_country": "US",
-                                            "certificate_key_compromised": false,
-                                            "certificate_known_compromised": false,
-                                            "certificate_md5_fingerprint": "79e4a9840d7d3a96d7c04fe2434c892e",
-                                            "certificate_not_after": "2031-11-10T00:00:00",
-                                            "certificate_not_before": "2006-11-10T00:00:00",
-                                            "certificate_private_key_pem": "-----BEGIN PRIVATE KEY-----\nMIIBJwIBADANBgkqhkiG9w0BAQEFAASCAREwggENAgEAAoIBAQDiO+ERct6opNOj\nV6pQoo8Ld5DJoqXuEs6WWwEJIMwBk6dOMLdT90PEaQBXneKNIt2HBkAAgQnOzhuD\nv9/NO3FG4tZmxwWzdicWj3ueHpV97rdIowja1q96DDkGZX9KXR+8F/irvu4o13R/\neniZWYVoblwjMku/TsDoWm3jcL93EL/8AfaF2ahEEFgyqXUY1dGivkfiJ2r0mjP4\nSQhgi9RftDqEv6GqSkx9Ps9PX2x2XqBLN5Ge3CLmbc4UGo5qy/7NsxRkF8dbKZ4y\nv/Lu+tMLQtSrt0Ey2gzU7/iB1buNWD+1G+hJKKJw2jEE3feyFvJMCk4HqO1KPV61\nf6OQw68nAgMBAAE=\n-----END PRIVATE KEY-----\n",
-                                            "certificate_public_key_curve": "",
-                                            "certificate_public_key_exponent": 65537,
-                                            "certificate_public_key_size": 2048,
-                                            "certificate_public_key_type": "RSA",
-                                            "certificate_root_ca": true,
-                                            "certificate_san": [],
-                                            "certificate_serial_number": "30:38:33:62:65:30:35:36:39:30:34:32:34:36:62:31:61:31:37:35:36:61:63:39:35:39:39:31:63:37:34:61",
-                                            "certificate_serial_number_decimal": 10944719598952040374951832963794454346,
-                                            "certificate_serial_number_hex": "0x83be056904246b1a1756ac95991c74a",
-                                            "certificate_sha1_fingerprint": "a8985d3a65e5e5c4b2d7d66d40c6dd2fb19c5436",
-                                            "certificate_sha256_fingerprint": "4348a0e9444c78cb265e058d5e8944b4d84f9662bd26db257f8934a443c70161",
-                                            "certificate_signature_algorithm": "sha1WithRSAEncryption",
-                                            "certificate_spki_fingerprint": "aff988906dde12955d9bebbf928fdcc31cce328d5b9384f21c8941ca26e20391",
-                                            "certificate_subject": "/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert Global Root CA",
-                                            "certificate_subject_key_identifier": "03de503556d14cbb66f0a3e21b1bc397b23dd155",
-                                            "certificate_type": "Root CA",
-                                            "certificate_valid": false,
-                                            "certificate_validation_oid": "",
-                                            "certificate_validation_type": "",
-                                            "certificate_version": 2,
-                                            "certification_authority_authorization": false,
-                                            "client_certificate_expected": false,
-                                            "client_renegotiation": false,
-                                            "compliance_results": {
-                                                "fips_ca_trust": true,
-                                                "fips_weak_key": true,
-                                                "nist_ca_trust": true,
-                                                "nist_weak_key": true,
-                                                "pci_ca_trust": true,
-                                                "pci_weak_key": true
-                                            },
-                                            "compression_support": false,
-                                            "dnssec": false,
-                                            "dnssec_algorithm": "",
-                                            "expiry_status": "Expires in 3496 days (10 years)",
-                                            "forward_anonymity": false,
-                                            "host": "",
-                                            "http1_1_support": false,
-                                            "http1_support": false,
-                                            "http2_cleartext_support": false,
-                                            "http2_support": false,
-                                            "http_coep": false,
-                                            "http_coop": false,
-                                            "http_corp": false,
-                                            "http_csp": false,
-                                            "http_expect_ct_report_uri": false,
-                                            "http_hsts": false,
-                                            "http_nosniff": false,
-                                            "http_status_code": 0,
-                                            "http_unsafe_referrer": false,
-                                            "http_xfo": false,
-                                            "http_xss_protection": false,
-                                            "negotiated_cipher": "",
-                                            "negotiated_cipher_bits": 0,
-                                            "negotiated_protocol": "",
-                                            "offered_ciphers": [],
-                                            "offered_tls_versions": [],
-                                            "peer_address": "",
-                                            "port": 443,
-                                            "possible_phish_or_malicious": false,
-                                            "preferred_protocol": "",
-                                            "revocation_crlite": false,
-                                            "revocation_ocsp_must_staple": false,
-                                            "revocation_ocsp_reason": "",
-                                            "revocation_ocsp_response": "",
-                                            "revocation_ocsp_stapling": false,
-                                            "revocation_ocsp_status": "",
-                                            "revocation_ocsp_time": "",
-                                            "scsv": false,
-                                            "session_resumption_caching": false,
-                                            "session_resumption_ticket_hint": false,
-                                            "session_resumption_tickets": false,
-                                            "sni_support": false,
-                                            "strong_cipher": false,
-                                            "tls_long_handshake_intolerance": false,
-                                            "tls_version_interference": false,
-                                            "tls_version_interference_versions": [],
-                                            "tls_version_intolerance": false,
-                                            "tls_version_intolerance_versions": [],
-                                            "tlsa": false,
-                                            "trust_android": true,
-                                            "trust_android_status": "Android 2.2 (Froyo) 2010 Trusted\nAndroid 2.3 (Gingerbread) 2010 Trusted\nAndroid 3 (Honeycomb) 2011 Trusted\nAndroid 4 (Ice Cream Sandwich) 2011 Trusted\nAndroid 4.4 (KitKat) 2013 Trusted\nAndroid 7 (Nougat) 2016 Trusted\nAndroid 8 (Oreo) 2017 Trusted\nAndroid 9 (Pie) 2018 Trusted\nAndroid 10 (Q) 2019 Trusted\nAndroid 11 2020 Trusted\nAndroid 12 2021 Trusted",
-                                            "trust_ccadb": true,
-                                            "trust_ccadb_status": "Root CA Certificate present in CCADB 2022.04.11 Trust Store (Mozilla, Microsoft, and Apple)",
-                                            "trust_certifi": true,
-                                            "trust_certifi_status": "Root CA Certificate present in Certifi certifi==2021.10.8 Trust Store (Django, requests, urllib, and anything based from these)",
-                                            "trust_java": true,
-                                            "trust_java_status": "Root CA Certificate present in Java SE java 18 2022-03-22 Trust Store",
-                                            "trust_linux": true,
-                                            "trust_linux_status": "Root CA Certificate present in Linux 5.17.1-arch1-1 Trust Store",
-                                            "trust_russia": false,
-                                            "trust_russia_status": "No Root CA Certificate in the Russian Trust Store",
-                                            "verification_details": [
-                                                "The use of SHA1 with RSA Encryption is considered vulnerable. Macquarie University Australia 2009: identified vulnerabilities to collision attacks, later in 2017 Marc Stevens demonstrated collision proofs",
-                                                "Your private key is exposed; Attackers in possession of the private key can impersonate the website, eavesdrop on encrypted traffic they have copied, or digitally sign malware on your behalf and distribute to target systems as you identified as the attacker"
-                                            ],
-                                            "verification_results": {
-                                                "avoid_known_weak_keys": true,
-                                                "avoid_known_weak_signature_algorithm": false,
-                                                "common_name_defined": true,
-                                                "issued_past_tense": true,
-                                                "not_expired": true,
-                                                "not_revoked": true
-                                            },
-                                            "weak_cipher": false
-                                        },
-                                        {
-                                            "certificate_authority_key_identifier": "b76ba2eaa8aa848c79eab4da0f98b2c59576b9f4",
-                                            "certificate_chain_valid": true,
-                                            "certificate_chain_validation_result": "Validated: digital_signature,key_encipherment,server_auth",
-                                            "certificate_common_name": "ssllabs.com",
-                                            "certificate_expired": false,
-                                            "certificate_extensions": [
-                                                {
-                                                    "authorityKeyIdentifier": "b76ba2eaa8aa848c79eab4da0f98b2c59576b9f4",
-                                                    "authority_cert_issuer": "",
-                                                    "authority_cert_serial_number": null,
-                                                    "critical": false,
-                                                    "name": "authorityKeyIdentifier"
-                                                },
-                                                {
-                                                    "critical": false,
-                                                    "name": "subjectKeyIdentifier",
-                                                    "subjectKeyIdentifier": "022d0b65dda366450fa8e613207329078eec0742"
-                                                },
-                                                {
-                                                    "critical": false,
-                                                    "name": "subjectAltName",
-                                                    "subjectAltName": [
-                                                        "ssllabs.com",
-                                                        "www.ssllabs.com",
-                                                        "api.ssllabs.com",
-                                                        "clienttest.ssllabs.com",
-                                                        "plaintext.ssllabs.com",
-                                                        "entrust.ssllabs.com",
-                                                        "globalsign.ssllabs.com",
-                                                        "casecurity.ssllabs.com",
-                                                        "wosign.ssllabs.com",
-                                                        "akamai.ssllabs.com",
-                                                        "ota.ssllabs.com",
-                                                        "biznet.ssllabs.com",
-                                                        "trustzone.ssllabs.com",
-                                                        "comodo.ssllabs.com",
-                                                        "globaltrust.ssllabs.com",
-                                                        "secure128.ssllabs.com",
-                                                        "networking4all.ssllabs.com",
-                                                        "geocerts.ssllabs.com"
-                                                    ]
-                                                },
-                                                {
-                                                    "content_commitment": false,
-                                                    "critical": true,
-                                                    "crl_sign": false,
-                                                    "data_encipherment": false,
-                                                    "digital_signature": true,
-                                                    "keyUsage": [
-                                                        "digital_signature",
-                                                        "key_encipherment"
-                                                    ],
-                                                    "key_agreement": false,
-                                                    "key_cert_sign": false,
-                                                    "key_encipherment": true,
-                                                    "name": "keyUsage"
-                                                },
-                                                {
-                                                    "critical": false,
-                                                    "extendedKeyUsage": [
-                                                        "serverAuth",
-                                                        "clientAuth"
-                                                    ],
-                                                    "name": "extendedKeyUsage"
-                                                },
-                                                {
-                                                    "cRLDistributionPoints": [
-                                                        {
-                                                            "crl_issuer": "",
-                                                            "full_name": "http://crl3.digicert.com/DigiCertTLSRSASHA2562020CA1-4.crl",
-                                                            "reasons": null,
-                                                            "relative_name": null
-                                                        },
-                                                        {
-                                                            "crl_issuer": "",
-                                                            "full_name": "http://crl4.digicert.com/DigiCertTLSRSASHA2562020CA1-4.crl",
-                                                            "reasons": null,
-                                                            "relative_name": null
-                                                        }
-                                                    ],
-                                                    "critical": false,
-                                                    "name": "cRLDistributionPoints"
-                                                },
-                                                {
-                                                    "critical": false,
-                                                    "name": "certificatePolicies"
-                                                },
-                                                {
-                                                    "authorityInfoAccess": [
-                                                        {
-                                                            "access_location": "http://ocsp.digicert.com",
-                                                            "access_method": "OCSP"
-                                                        },
-                                                        {
-                                                            "access_location": "http://cacerts.digicert.com/DigiCertTLSRSASHA2562020CA1-1.crt",
-                                                            "access_method": "caIssuers"
-                                                        }
-                                                    ],
-                                                    "critical": false,
-                                                    "name": "authorityInfoAccess"
-                                                },
-                                                {
-                                                    "ca": false,
-                                                    "critical": false,
-                                                    "name": "basicConstraints",
-                                                    "path_length": null
-                                                },
-                                                {
-                                                    "critical": false,
-                                                    "name": "signedCertificateTimestampList",
-                                                    "signedCertificateTimestampList": [
-                                                        {
-                                                            "log_id": "e83ed0da3ef5063532e75728bc896bc903d3cbd1116beceb69e1777d6d06bd6e",
-                                                            "pre_certificate": true,
-                                                            "timestamp": "2022-03-15 06:24:01.276000",
-                                                            "version": "v1"
-                                                        },
-                                                        {
-                                                            "log_id": "35cf191bbfb16c57bf0fad4c6d42cbbbb627202651ea3fe12aefa803c33bd64c",
-                                                            "pre_certificate": true,
-                                                            "timestamp": "2022-03-15 06:24:01.251000",
-                                                            "version": "v1"
-                                                        },
-                                                        {
-                                                            "log_id": "b3737707e18450f86386d605a9dc11094a792db1670c0b87dcf0030e7936a59a",
-                                                            "pre_certificate": true,
-                                                            "timestamp": "2022-03-15 06:24:01.304000",
-                                                            "version": "v1"
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "certificate_intermediate_ca": false,
-                                            "certificate_is_self_signed": false,
-                                            "certificate_issuer": "DigiCert TLS RSA SHA256 2020 CA1",
-                                            "certificate_issuer_country": "US",
-                                            "certificate_key_compromised": false,
-                                            "certificate_known_compromised": false,
-                                            "certificate_md5_fingerprint": "d24062cf1bd77bb305ec2f48a3b4965d",
-                                            "certificate_not_after": "2023-03-15T23:59:59",
-                                            "certificate_not_before": "2022-03-15T00:00:00",
-                                            "certificate_private_key_pem": "-----BEGIN PRIVATE KEY-----\nMIIBJwIBADANBgkqhkiG9w0BAQEFAASCAREwggENAgEAAoIBAQC/uyxQghAsy+wi\nexi/qAW9olo9HlK4rt6slXnseRpADctORbU/ARoH9HyjIcW1Eb7HNzfYRqMaMH6i\nVcz0x2h6QWbfu01cZjvbx7mfCuPXEmR6XeZpsQR9VrvQDU4URdWLgfP+UTdsPkaY\n5yDjnjrbXwlxcoDs826E/87XwLuT1cvTc3KzAaQWCgFIX/6L3Q/88IQrvaa+JuAl\nxJO56G2ZPQz7PlbWuerKNq3CwHAZfS9ZyFNca0+b0+8TeDBq1vB4J4PyeDz8fWxN\nH7/Al1n3pq9el5o7EtdaM17T2LpbCWTdIV5urOYw81ESwQqePFo1SGQulWlaiJCL\nyyhJOoPrAgMBAAE=\n-----END PRIVATE KEY-----\n",
-                                            "certificate_public_key_curve": "",
-                                            "certificate_public_key_exponent": 65537,
-                                            "certificate_public_key_size": 2048,
-                                            "certificate_public_key_type": "RSA",
-                                            "certificate_root_ca": false,
-                                            "certificate_san": [
-                                                "ssllabs.com",
-                                                "www.ssllabs.com",
-                                                "api.ssllabs.com",
-                                                "clienttest.ssllabs.com",
-                                                "plaintext.ssllabs.com",
-                                                "entrust.ssllabs.com",
-                                                "globalsign.ssllabs.com",
-                                                "casecurity.ssllabs.com",
-                                                "wosign.ssllabs.com",
-                                                "akamai.ssllabs.com",
-                                                "ota.ssllabs.com",
-                                                "biznet.ssllabs.com",
-                                                "trustzone.ssllabs.com",
-                                                "comodo.ssllabs.com",
-                                                "globaltrust.ssllabs.com",
-                                                "secure128.ssllabs.com",
-                                                "networking4all.ssllabs.com",
-                                                "geocerts.ssllabs.com"
-                                            ],
-                                            "certificate_serial_number": "30:62:33:66:33:32:34:30:62:34:35:66:34:35:65:32:35:63:36:31:61:62:66:62:34:61:38:35:37:63:63:65",
-                                            "certificate_serial_number_decimal": 14949641902626831978591873907143572686,
-                                            "certificate_serial_number_hex": "0xb3f3240b45f45e25c61abfb4a857cce",
-                                            "certificate_sha1_fingerprint": "ce725c2981abf60e185cb64f954862b67ec32e84",
-                                            "certificate_sha256_fingerprint": "c835d382f9bbad18cbe79321c3e9e948e0f316335310bb68896e3456c936b77f",
-                                            "certificate_signature_algorithm": "sha256WithRSAEncryption",
-                                            "certificate_spki_fingerprint": "300371e30059aa2ebddcd5a94341e5a8a8ec9622e4ff0a90db31e5a5c192a977",
-                                            "certificate_subject": "/C=US/ST=California/L=Foster City/O=Qualys, Inc./CN=ssllabs.com",
-                                            "certificate_subject_key_identifier": "022d0b65dda366450fa8e613207329078eec0742",
-                                            "certificate_type": "Leaf Certificate",
-                                            "certificate_valid": true,
-                                            "certificate_validation_oid": "2.23.140.1.2.2",
-                                            "certificate_validation_type": "Organization Validation (OV)",
-                                            "certificate_version": 2,
-                                            "certification_authority_authorization": true,
-                                            "client_certificate_expected": false,
-                                            "client_renegotiation": false,
-                                            "compliance_results": {
-                                                "fips_weak_cipher": false,
-                                                "fips_weak_key": true,
-                                                "fips_weak_protocol": true,
-                                                "nist_mtls": false,
-                                                "nist_weak_cipher": false,
-                                                "nist_weak_key": true,
-                                                "nist_weak_protocol": true,
-                                                "pci_deprecated_algo": true,
-                                                "pci_vuln_compression": true,
-                                                "pci_vuln_renegotiation": true,
-                                                "pci_vuln_session_resumption": false,
-                                                "pci_weak_cipher": true,
-                                                "pci_weak_key": true,
-                                                "pci_weak_protocol": true
-                                            },
-                                            "compression_support": false,
-                                            "dnssec": false,
-                                            "dnssec_algorithm": "",
-                                            "expiry_status": "Expires in 335 days",
-                                            "forward_anonymity": true,
-                                            "host": "ssllabs.com",
-                                            "http1_1_support": true,
-                                            "http1_support": false,
-                                            "http2_cleartext_support": false,
-                                            "http2_support": true,
-                                            "http_coep": false,
-                                            "http_coop": false,
-                                            "http_corp": false,
-                                            "http_csp": false,
-                                            "http_expect_ct_report_uri": false,
-                                            "http_hsts": false,
-                                            "http_nosniff": true,
-                                            "http_status_code": 302,
-                                            "http_unsafe_referrer": false,
-                                            "http_xfo": false,
-                                            "http_xss_protection": true,
-                                            "negotiated_cipher": "ECDHE-RSA-AES128-GCM-SHA256",
-                                            "negotiated_cipher_bits": 128,
-                                            "negotiated_protocol": "TLSv1.2 (0x303)",
-                                            "offered_ciphers": [
-                                                "TLS_AES_256_GCM_SHA384",
-                                                "TLS_CHACHA20_POLY1305_SHA256",
-                                                "TLS_AES_128_GCM_SHA256",
-                                                "ECDHE-ECDSA-AES256-GCM-SHA384",
-                                                "ECDHE-RSA-AES256-GCM-SHA384",
-                                                "DHE-RSA-AES256-GCM-SHA384",
-                                                "ECDHE-ECDSA-CHACHA20-POLY1305",
-                                                "ECDHE-RSA-CHACHA20-POLY1305",
-                                                "DHE-RSA-CHACHA20-POLY1305",
-                                                "ECDHE-ECDSA-AES128-GCM-SHA256",
-                                                "ECDHE-RSA-AES128-GCM-SHA256",
-                                                "DHE-RSA-AES128-GCM-SHA256",
-                                                "ECDHE-ECDSA-AES256-SHA384",
-                                                "ECDHE-RSA-AES256-SHA384",
-                                                "DHE-RSA-AES256-SHA256",
-                                                "ECDHE-ECDSA-AES128-SHA256",
-                                                "ECDHE-RSA-AES128-SHA256",
-                                                "DHE-RSA-AES128-SHA256",
-                                                "ECDHE-ECDSA-AES256-SHA",
-                                                "ECDHE-RSA-AES256-SHA",
-                                                "DHE-RSA-AES256-SHA",
-                                                "ECDHE-ECDSA-AES128-SHA",
-                                                "ECDHE-RSA-AES128-SHA",
-                                                "DHE-RSA-AES128-SHA",
-                                                "RSA-PSK-AES256-GCM-SHA384",
-                                                "DHE-PSK-AES256-GCM-SHA384",
-                                                "RSA-PSK-CHACHA20-POLY1305",
-                                                "DHE-PSK-CHACHA20-POLY1305",
-                                                "ECDHE-PSK-CHACHA20-POLY1305",
-                                                "AES256-GCM-SHA384",
-                                                "PSK-AES256-GCM-SHA384",
-                                                "PSK-CHACHA20-POLY1305",
-                                                "RSA-PSK-AES128-GCM-SHA256",
-                                                "DHE-PSK-AES128-GCM-SHA256",
-                                                "AES128-GCM-SHA256",
-                                                "PSK-AES128-GCM-SHA256",
-                                                "AES256-SHA256",
-                                                "AES128-SHA256",
-                                                "ECDHE-PSK-AES256-CBC-SHA384",
-                                                "ECDHE-PSK-AES256-CBC-SHA",
-                                                "SRP-RSA-AES-256-CBC-SHA",
-                                                "SRP-AES-256-CBC-SHA",
-                                                "RSA-PSK-AES256-CBC-SHA384",
-                                                "DHE-PSK-AES256-CBC-SHA384",
-                                                "RSA-PSK-AES256-CBC-SHA",
-                                                "DHE-PSK-AES256-CBC-SHA",
-                                                "AES256-SHA",
-                                                "PSK-AES256-CBC-SHA384",
-                                                "PSK-AES256-CBC-SHA",
-                                                "ECDHE-PSK-AES128-CBC-SHA256",
-                                                "ECDHE-PSK-AES128-CBC-SHA",
-                                                "SRP-RSA-AES-128-CBC-SHA",
-                                                "SRP-AES-128-CBC-SHA",
-                                                "RSA-PSK-AES128-CBC-SHA256",
-                                                "DHE-PSK-AES128-CBC-SHA256",
-                                                "RSA-PSK-AES128-CBC-SHA",
-                                                "DHE-PSK-AES128-CBC-SHA",
-                                                "AES128-SHA",
-                                                "PSK-AES128-CBC-SHA256",
-                                                "PSK-AES128-CBC-SHA"
-                                            ],
-                                            "offered_tls_versions": [
-                                                "TLSv1.3 (0x304)",
-                                                "TLSv1.2 (0x303)"
-                                            ],
-                                            "peer_address": "64.41.200.100",
-                                            "port": 443,
-                                            "possible_phish_or_malicious": false,
-                                            "preferred_protocol": "TLSv1.3 (0x304)",
-                                            "revocation_crlite": false,
-                                            "revocation_ocsp_must_staple": false,
-                                            "revocation_ocsp_reason": null,
-                                            "revocation_ocsp_response": "Successful",
-                                            "revocation_ocsp_stapling": false,
-                                            "revocation_ocsp_status": "Good",
-                                            "revocation_ocsp_time": null,
-                                            "scsv": false,
-                                            "session_resumption_caching": true,
-                                            "session_resumption_ticket_hint": true,
-                                            "session_resumption_tickets": true,
-                                            "sni_support": true,
-                                            "strong_cipher": false,
-                                            "tls_long_handshake_intolerance": false,
-                                            "tls_version_interference": true,
-                                            "tls_version_interference_versions": [
-                                                "TLSv1.1 (0x302)",
-                                                "TLSv1 (0x301)",
-                                                "SSLv3 (0x300)",
-                                                "SSLv2 (0x2ff)"
-                                            ],
-                                            "tls_version_intolerance": true,
-                                            "tls_version_intolerance_versions": [
-                                                "TLSv1.4 (0x305)",
-                                                "TLSv1.8 (0x309)",
-                                                "TLSv2 (0x400)",
-                                                "TLSv2.1 (0x401)",
-                                                "TLSv2.3 (0x404)"
-                                            ],
-                                            "tlsa": false,
-                                            "trust_android": false,
-                                            "trust_android_status": "",
-                                            "trust_ccadb": false,
-                                            "trust_ccadb_status": "",
-                                            "trust_certifi": false,
-                                            "trust_certifi_status": "",
-                                            "trust_java": false,
-                                            "trust_java_status": "",
-                                            "trust_linux": false,
-                                            "trust_linux_status": "",
-                                            "trust_russia": false,
-                                            "trust_russia_status": "",
-                                            "verification_details": [
-                                                "Your private key is exposed; Attackers in possession of the private key can impersonate the website, eavesdrop on encrypted traffic they have copied, or digitally sign malware on your behalf and distribute to target systems as you identified as the attacker",
-                                                "This domain is not enabled for DNSSEC (rfc6840), DS and DNSKEY records were not provided",
-                                                "Server preferred protocol TLSv1.3 (0x304) was avoided and TLSv1.2 (0x303) was negotiated instead, consider Signaling Cipher Suite Value (SCSV) for Preventing Protocol Downgrade Attacks (rfc7507)",
-                                                "Session Resumption (caching) This server has confidentiality vulnerability and a tracking issue affecting privacy; rfc5246 recommends a lifetime of session IDs of less than 24 hours where afterwards the client attempts a resumption and only then the server falls back to a full handshake. The server can link both PSKs to the same user, session resumption caching allows a user identity to be shared with third-party trackers observing traffic on this server. Prior to TLS 1.3 this was a 0-RTT resumption which allows malicious actors to read all of the past communications using the same PSK. The flaw was detailed by rfc5077 in 2008 and web server default configurations have not widely adopted the changes.",
-                                                "Session Resumption (tickets) A single key is used for the sessions of multiple users and is intended to mitigate privacy concerns of individual tracking, though a ticket identifier can be reused by a malicious actor for multiple or subsequent connections and decrypt all messages as resumed connections don't perform any Diffie-Hellman exchange, so they don't offer Forward Secrecy against the compromise of the STEK. This vulnerability was first identified by Adam Langley in 2013 which was built on works by M. Perry. in 2012",
-                                                "Your server is not configured to accept clients that only support TLS version TLSv1.1 or older, these clients will be shown an error \"ERR_SSL_VERSION_INTERFERENCE\" and not negotiate a secure connection to your server.",
-                                                "PCI DSS version 3.2.1 compliance requires that no known vulnerabilities are present",
-                                                "FIPS 140-2 (NIST SP800-131A transition mode) compliance requires cipher bits to greater than 160, not be of Anonymous key exchange suites, Exchange ciphers, or many block ciphers",
-                                                "NIST SP800-131A (strict mode) compliance requires cipher bits to greater than 160, not be of Anonymous key exchange suites, Exchange ciphers, or many block ciphers"
-                                            ],
-                                            "verification_results": {
-                                                "avoid_deprecated_dnssec_algorithms": true,
-                                                "avoid_deprecated_protocols": true,
-                                                "avoid_known_weak_keys": true,
-                                                "avoid_known_weak_signature_algorithm": true,
-                                                "basic_constraints_ca": true,
-                                                "certificate_valid_tls_usage": true,
-                                                "common_name_defined": true,
-                                                "common_name_valid": true,
-                                                "issued_past_tense": true,
-                                                "match_hostname": true,
-                                                "not_expired": true,
-                                                "not_revoked": true,
-                                                "not_self_signed": true,
-                                                "trusted_ca": true,
-                                                "valid_caa": true
-                                            },
-                                            "weak_cipher": false
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    },
-                    "403": {
-                        "description": "Insufficient privileges for this action"
-                    },
-                    "404": {
-                        "description": "No response for this domain name"
-                    },
-                    "422": {
-                        "description": "Validation Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/HTTPValidationError"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "components": {
-        "schemas": {
-            "HTTPValidationError": {
-                "title": "HTTPValidationError",
-                "type": "object",
-                "properties": {
-                    "detail": {
-                        "title": "Detail",
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/ValidationError"
-                        }
-                    }
-                }
-            },
-            "ValidationError": {
-                "title": "ValidationError",
-                "required": [
-                    "msg"
-                ],
-                "type": "object",
-                "properties": {
-                    "msg": {
-                        "title": "Message",
-                        "type": "string"
-                    }
-                }
-            }
-        }
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Trivial Scanner - SSL/TLS DNS HTTP Analyser - Qualys SSL Labs alternative",
+    "version": "0.0.1"
+  },
+  "servers": [
+    {
+      "url": "https://psmv7p7m4dccsmda3ilsjchleu0epoiw.lambda-url.ap-southeast-2.on.aws/"
     }
+  ],
+  "paths": {
+    "/{host}": {
+      "get": {
+        "summary": "Query Host",
+        "description": "Provide a domain name as the target host to query the SSL/TLS configuration and verify root trust",
+        "operationId": "query_host",
+        "parameters": [
+          {
+            "description": "target domain name",
+            "required": true,
+            "schema": {
+              "title": "Domain Name",
+              "type": "string",
+              "description": "target domain name"
+            },
+            "name": "host",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Port number",
+              "maximum": 49151.0,
+              "minimum": 1.0,
+              "type": "integer",
+              "default": 443
+            },
+            "name": "port",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Control if SNI is utilised",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "use_sni",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved information of the domain",
+            "content": {
+              "application/json": {
+                "schema": {},
+                "example": {
+                  "date": "2022-04-14T03:21:22",
+                  "evaluation_duration_seconds": 55.546247,
+                  "generator": "trivialscan==2.3.1",
+                  "validations": [
+                    {
+                      "certificate_authority_key_identifier": "03de503556d14cbb66f0a3e21b1bc397b23dd155",
+                      "certificate_common_name": "DigiCert TLS RSA SHA256 2020 CA1",
+                      "certificate_expired": false,
+                      "certificate_extensions": [
+                        {
+                          "ca": true,
+                          "critical": true,
+                          "name": "basicConstraints",
+                          "path_length": 0
+                        },
+                        {
+                          "critical": false,
+                          "name": "subjectKeyIdentifier",
+                          "subjectKeyIdentifier": "b76ba2eaa8aa848c79eab4da0f98b2c59576b9f4"
+                        },
+                        {
+                          "authorityKeyIdentifier": "03de503556d14cbb66f0a3e21b1bc397b23dd155",
+                          "authority_cert_issuer": "",
+                          "authority_cert_serial_number": null,
+                          "critical": false,
+                          "name": "authorityKeyIdentifier"
+                        },
+                        {
+                          "content_commitment": false,
+                          "critical": true,
+                          "crl_sign": true,
+                          "data_encipherment": false,
+                          "digital_signature": true,
+                          "keyUsage": [
+                            "digital_signature",
+                            "key_cert_sign",
+                            "crl_sign"
+                          ],
+                          "key_agreement": false,
+                          "key_cert_sign": true,
+                          "key_encipherment": false,
+                          "name": "keyUsage"
+                        },
+                        {
+                          "critical": false,
+                          "extendedKeyUsage": ["serverAuth", "clientAuth"],
+                          "name": "extendedKeyUsage"
+                        },
+                        {
+                          "authorityInfoAccess": [
+                            {
+                              "access_location": "http://ocsp.digicert.com",
+                              "access_method": "OCSP"
+                            },
+                            {
+                              "access_location": "http://cacerts.digicert.com/DigiCertGlobalRootCA.crt",
+                              "access_method": "caIssuers"
+                            }
+                          ],
+                          "critical": false,
+                          "name": "authorityInfoAccess"
+                        },
+                        {
+                          "cRLDistributionPoints": [
+                            {
+                              "crl_issuer": "",
+                              "full_name": "http://crl3.digicert.com/DigiCertGlobalRootCA.crl",
+                              "reasons": null,
+                              "relative_name": null
+                            }
+                          ],
+                          "critical": false,
+                          "name": "cRLDistributionPoints"
+                        },
+                        {
+                          "critical": false,
+                          "name": "certificatePolicies"
+                        }
+                      ],
+                      "certificate_intermediate_ca": true,
+                      "certificate_is_self_signed": false,
+                      "certificate_issuer": "DigiCert Global Root CA",
+                      "certificate_issuer_country": "US",
+                      "certificate_key_compromised": false,
+                      "certificate_known_compromised": false,
+                      "certificate_md5_fingerprint": "e67b586f7046bfe0aa51f6660b119dd9",
+                      "certificate_not_after": "2031-04-13T23:59:59",
+                      "certificate_not_before": "2021-04-14T00:00:00",
+                      "certificate_private_key_pem": "-----BEGIN PRIVATE KEY-----\nMIIBJwIBADANBgkqhkiG9w0BAQEFAASCAREwggENAgEAAoIBAQDBS7NlR3C83U9Y\n2+yc7cNm5R8xE1StSmZGHywK7GQH5S7c3LkKIO3f48TQnpqpeh2CiOURVtsen1jC\nUecsNA0u0pLhVsvxeV+zu4fKJQN7mlJBZhBgT1cTSfDoN2eD3+fTS2dMIlGm3w6Z\nEO1XUXQm4n3HymIuExt/I4glU2/BNFgAi4T/+L6nWEkie5atooibFbygfN/pUajV\nsO034ja0gktitUma7Mdn1uM+9ePWEl5E8b9xQn1YhAOAsYEB+vnKMru0jieHJ8Ur\ndNSo1pfew2T5ys5Tola8eBeOSQMprvtJT6QVuc7yXBlXbWt5pyuiJyATtdA9QNMh\nMAeT6pn1AgMBAAE=\n-----END PRIVATE KEY-----\n",
+                      "certificate_public_key_curve": "",
+                      "certificate_public_key_exponent": 65537,
+                      "certificate_public_key_size": 2048,
+                      "certificate_public_key_type": "RSA",
+                      "certificate_root_ca": false,
+                      "certificate_san": [],
+                      "certificate_serial_number": "30:36:64:38:64:39:30:34:64:35:35:38:34:33:34:36:66:36:38:61:32:66:61:37:35:34:32:32:37:65:63:34",
+                      "certificate_serial_number_decimal": 9101305761976670746388865003982847684,
+                      "certificate_serial_number_hex": "0x6d8d904d5584346f68a2fa754227ec4",
+                      "certificate_sha1_fingerprint": "1c58a3a8518e8759bf075b76b750d4f2df264fcd",
+                      "certificate_sha256_fingerprint": "52274c57ce4dee3b49db7a7ff708c040f771898b3be88725a86fb4430182fe14",
+                      "certificate_signature_algorithm": "sha256WithRSAEncryption",
+                      "certificate_spki_fingerprint": "450799901e36ce751fb0320815621189811c2a5ee71f0345c160ab9cc3096d57",
+                      "certificate_subject": "/C=US/O=DigiCert Inc/CN=DigiCert TLS RSA SHA256 2020 CA1",
+                      "certificate_subject_key_identifier": "b76ba2eaa8aa848c79eab4da0f98b2c59576b9f4",
+                      "certificate_type": "Intermediate CA",
+                      "certificate_valid": true,
+                      "certificate_validation_oid": "2.23.140.1.2.3",
+                      "certificate_validation_type": "Extended Validation (EV)",
+                      "certificate_version": 2,
+                      "certification_authority_authorization": false,
+                      "client_certificate_expected": false,
+                      "client_renegotiation": false,
+                      "compliance_results": {
+                        "fips_weak_key": true,
+                        "nist_weak_key": true,
+                        "pci_weak_key": true
+                      },
+                      "compression_support": false,
+                      "dnssec": false,
+                      "dnssec_algorithm": "",
+                      "expiry_status": "Expires in 3286 days (9 years)",
+                      "forward_anonymity": false,
+                      "host": "",
+                      "http1_1_support": false,
+                      "http1_support": false,
+                      "http2_cleartext_support": false,
+                      "http2_support": false,
+                      "http_coep": false,
+                      "http_coop": false,
+                      "http_corp": false,
+                      "http_csp": false,
+                      "http_expect_ct_report_uri": false,
+                      "http_hsts": false,
+                      "http_nosniff": false,
+                      "http_status_code": 0,
+                      "http_unsafe_referrer": false,
+                      "http_xfo": false,
+                      "http_xss_protection": false,
+                      "negotiated_cipher": "",
+                      "negotiated_cipher_bits": 0,
+                      "negotiated_protocol": "",
+                      "offered_ciphers": [],
+                      "offered_tls_versions": [],
+                      "peer_address": "",
+                      "port": 443,
+                      "possible_phish_or_malicious": false,
+                      "preferred_protocol": "",
+                      "revocation_crlite": false,
+                      "revocation_ocsp_must_staple": false,
+                      "revocation_ocsp_reason": "",
+                      "revocation_ocsp_response": "",
+                      "revocation_ocsp_stapling": false,
+                      "revocation_ocsp_status": "",
+                      "revocation_ocsp_time": "",
+                      "scsv": false,
+                      "session_resumption_caching": false,
+                      "session_resumption_ticket_hint": false,
+                      "session_resumption_tickets": false,
+                      "sni_support": false,
+                      "strong_cipher": false,
+                      "tls_long_handshake_intolerance": false,
+                      "tls_version_interference": false,
+                      "tls_version_interference_versions": [],
+                      "tls_version_intolerance": false,
+                      "tls_version_intolerance_versions": [],
+                      "tlsa": false,
+                      "trust_android": false,
+                      "trust_android_status": "",
+                      "trust_ccadb": false,
+                      "trust_ccadb_status": "",
+                      "trust_certifi": false,
+                      "trust_certifi_status": "",
+                      "trust_java": false,
+                      "trust_java_status": "",
+                      "trust_linux": false,
+                      "trust_linux_status": "",
+                      "trust_russia": false,
+                      "trust_russia_status": "",
+                      "verification_details": [
+                        "Your private key is exposed; Attackers in possession of the private key can impersonate the website, eavesdrop on encrypted traffic they have copied, or digitally sign malware on your behalf and distribute to target systems as you identified as the attacker"
+                      ],
+                      "verification_results": {
+                        "avoid_known_weak_keys": true,
+                        "avoid_known_weak_signature_algorithm": true,
+                        "common_name_defined": true,
+                        "issued_past_tense": true,
+                        "not_expired": true,
+                        "not_revoked": true,
+                        "not_self_signed": true
+                      },
+                      "weak_cipher": false
+                    },
+                    {
+                      "certificate_authority_key_identifier": "03de503556d14cbb66f0a3e21b1bc397b23dd155",
+                      "certificate_common_name": "DigiCert Global Root CA",
+                      "certificate_expired": false,
+                      "certificate_extensions": [
+                        {
+                          "content_commitment": false,
+                          "critical": true,
+                          "crl_sign": true,
+                          "data_encipherment": false,
+                          "digital_signature": true,
+                          "keyUsage": [
+                            "digital_signature",
+                            "key_cert_sign",
+                            "crl_sign"
+                          ],
+                          "key_agreement": false,
+                          "key_cert_sign": true,
+                          "key_encipherment": false,
+                          "name": "keyUsage"
+                        },
+                        {
+                          "ca": true,
+                          "critical": true,
+                          "name": "basicConstraints",
+                          "path_length": null
+                        },
+                        {
+                          "critical": false,
+                          "name": "subjectKeyIdentifier",
+                          "subjectKeyIdentifier": "03de503556d14cbb66f0a3e21b1bc397b23dd155"
+                        },
+                        {
+                          "authorityKeyIdentifier": "03de503556d14cbb66f0a3e21b1bc397b23dd155",
+                          "authority_cert_issuer": "",
+                          "authority_cert_serial_number": null,
+                          "critical": false,
+                          "name": "authorityKeyIdentifier"
+                        }
+                      ],
+                      "certificate_intermediate_ca": false,
+                      "certificate_is_self_signed": false,
+                      "certificate_issuer": "DigiCert Global Root CA",
+                      "certificate_issuer_country": "US",
+                      "certificate_key_compromised": false,
+                      "certificate_known_compromised": false,
+                      "certificate_md5_fingerprint": "79e4a9840d7d3a96d7c04fe2434c892e",
+                      "certificate_not_after": "2031-11-10T00:00:00",
+                      "certificate_not_before": "2006-11-10T00:00:00",
+                      "certificate_private_key_pem": "-----BEGIN PRIVATE KEY-----\nMIIBJwIBADANBgkqhkiG9w0BAQEFAASCAREwggENAgEAAoIBAQDiO+ERct6opNOj\nV6pQoo8Ld5DJoqXuEs6WWwEJIMwBk6dOMLdT90PEaQBXneKNIt2HBkAAgQnOzhuD\nv9/NO3FG4tZmxwWzdicWj3ueHpV97rdIowja1q96DDkGZX9KXR+8F/irvu4o13R/\neniZWYVoblwjMku/TsDoWm3jcL93EL/8AfaF2ahEEFgyqXUY1dGivkfiJ2r0mjP4\nSQhgi9RftDqEv6GqSkx9Ps9PX2x2XqBLN5Ge3CLmbc4UGo5qy/7NsxRkF8dbKZ4y\nv/Lu+tMLQtSrt0Ey2gzU7/iB1buNWD+1G+hJKKJw2jEE3feyFvJMCk4HqO1KPV61\nf6OQw68nAgMBAAE=\n-----END PRIVATE KEY-----\n",
+                      "certificate_public_key_curve": "",
+                      "certificate_public_key_exponent": 65537,
+                      "certificate_public_key_size": 2048,
+                      "certificate_public_key_type": "RSA",
+                      "certificate_root_ca": true,
+                      "certificate_san": [],
+                      "certificate_serial_number": "30:38:33:62:65:30:35:36:39:30:34:32:34:36:62:31:61:31:37:35:36:61:63:39:35:39:39:31:63:37:34:61",
+                      "certificate_serial_number_decimal": 10944719598952040374951832963794454346,
+                      "certificate_serial_number_hex": "0x83be056904246b1a1756ac95991c74a",
+                      "certificate_sha1_fingerprint": "a8985d3a65e5e5c4b2d7d66d40c6dd2fb19c5436",
+                      "certificate_sha256_fingerprint": "4348a0e9444c78cb265e058d5e8944b4d84f9662bd26db257f8934a443c70161",
+                      "certificate_signature_algorithm": "sha1WithRSAEncryption",
+                      "certificate_spki_fingerprint": "aff988906dde12955d9bebbf928fdcc31cce328d5b9384f21c8941ca26e20391",
+                      "certificate_subject": "/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert Global Root CA",
+                      "certificate_subject_key_identifier": "03de503556d14cbb66f0a3e21b1bc397b23dd155",
+                      "certificate_type": "Root CA",
+                      "certificate_valid": false,
+                      "certificate_validation_oid": "",
+                      "certificate_validation_type": "",
+                      "certificate_version": 2,
+                      "certification_authority_authorization": false,
+                      "client_certificate_expected": false,
+                      "client_renegotiation": false,
+                      "compliance_results": {
+                        "fips_ca_trust": true,
+                        "fips_weak_key": true,
+                        "nist_ca_trust": true,
+                        "nist_weak_key": true,
+                        "pci_ca_trust": true,
+                        "pci_weak_key": true
+                      },
+                      "compression_support": false,
+                      "dnssec": false,
+                      "dnssec_algorithm": "",
+                      "expiry_status": "Expires in 3496 days (10 years)",
+                      "forward_anonymity": false,
+                      "host": "",
+                      "http1_1_support": false,
+                      "http1_support": false,
+                      "http2_cleartext_support": false,
+                      "http2_support": false,
+                      "http_coep": false,
+                      "http_coop": false,
+                      "http_corp": false,
+                      "http_csp": false,
+                      "http_expect_ct_report_uri": false,
+                      "http_hsts": false,
+                      "http_nosniff": false,
+                      "http_status_code": 0,
+                      "http_unsafe_referrer": false,
+                      "http_xfo": false,
+                      "http_xss_protection": false,
+                      "negotiated_cipher": "",
+                      "negotiated_cipher_bits": 0,
+                      "negotiated_protocol": "",
+                      "offered_ciphers": [],
+                      "offered_tls_versions": [],
+                      "peer_address": "",
+                      "port": 443,
+                      "possible_phish_or_malicious": false,
+                      "preferred_protocol": "",
+                      "revocation_crlite": false,
+                      "revocation_ocsp_must_staple": false,
+                      "revocation_ocsp_reason": "",
+                      "revocation_ocsp_response": "",
+                      "revocation_ocsp_stapling": false,
+                      "revocation_ocsp_status": "",
+                      "revocation_ocsp_time": "",
+                      "scsv": false,
+                      "session_resumption_caching": false,
+                      "session_resumption_ticket_hint": false,
+                      "session_resumption_tickets": false,
+                      "sni_support": false,
+                      "strong_cipher": false,
+                      "tls_long_handshake_intolerance": false,
+                      "tls_version_interference": false,
+                      "tls_version_interference_versions": [],
+                      "tls_version_intolerance": false,
+                      "tls_version_intolerance_versions": [],
+                      "tlsa": false,
+                      "trust_android": true,
+                      "trust_android_status": "Android 2.2 (Froyo) 2010 Trusted\nAndroid 2.3 (Gingerbread) 2010 Trusted\nAndroid 3 (Honeycomb) 2011 Trusted\nAndroid 4 (Ice Cream Sandwich) 2011 Trusted\nAndroid 4.4 (KitKat) 2013 Trusted\nAndroid 7 (Nougat) 2016 Trusted\nAndroid 8 (Oreo) 2017 Trusted\nAndroid 9 (Pie) 2018 Trusted\nAndroid 10 (Q) 2019 Trusted\nAndroid 11 2020 Trusted\nAndroid 12 2021 Trusted",
+                      "trust_ccadb": true,
+                      "trust_ccadb_status": "Root CA Certificate present in CCADB 2022.04.11 Trust Store (Mozilla, Microsoft, and Apple)",
+                      "trust_certifi": true,
+                      "trust_certifi_status": "Root CA Certificate present in Certifi certifi==2021.10.8 Trust Store (Django, requests, urllib, and anything based from these)",
+                      "trust_java": true,
+                      "trust_java_status": "Root CA Certificate present in Java SE java 18 2022-03-22 Trust Store",
+                      "trust_linux": true,
+                      "trust_linux_status": "Root CA Certificate present in Linux 5.17.1-arch1-1 Trust Store",
+                      "trust_russia": false,
+                      "trust_russia_status": "No Root CA Certificate in the Russian Trust Store",
+                      "verification_details": [
+                        "The use of SHA1 with RSA Encryption is considered vulnerable. Macquarie University Australia 2009: identified vulnerabilities to collision attacks, later in 2017 Marc Stevens demonstrated collision proofs",
+                        "Your private key is exposed; Attackers in possession of the private key can impersonate the website, eavesdrop on encrypted traffic they have copied, or digitally sign malware on your behalf and distribute to target systems as you identified as the attacker"
+                      ],
+                      "verification_results": {
+                        "avoid_known_weak_keys": true,
+                        "avoid_known_weak_signature_algorithm": false,
+                        "common_name_defined": true,
+                        "issued_past_tense": true,
+                        "not_expired": true,
+                        "not_revoked": true
+                      },
+                      "weak_cipher": false
+                    },
+                    {
+                      "certificate_authority_key_identifier": "b76ba2eaa8aa848c79eab4da0f98b2c59576b9f4",
+                      "certificate_chain_valid": true,
+                      "certificate_chain_validation_result": "Validated: digital_signature,key_encipherment,server_auth",
+                      "certificate_common_name": "ssllabs.com",
+                      "certificate_expired": false,
+                      "certificate_extensions": [
+                        {
+                          "authorityKeyIdentifier": "b76ba2eaa8aa848c79eab4da0f98b2c59576b9f4",
+                          "authority_cert_issuer": "",
+                          "authority_cert_serial_number": null,
+                          "critical": false,
+                          "name": "authorityKeyIdentifier"
+                        },
+                        {
+                          "critical": false,
+                          "name": "subjectKeyIdentifier",
+                          "subjectKeyIdentifier": "022d0b65dda366450fa8e613207329078eec0742"
+                        },
+                        {
+                          "critical": false,
+                          "name": "subjectAltName",
+                          "subjectAltName": [
+                            "ssllabs.com",
+                            "www.ssllabs.com",
+                            "api.ssllabs.com",
+                            "clienttest.ssllabs.com",
+                            "plaintext.ssllabs.com",
+                            "entrust.ssllabs.com",
+                            "globalsign.ssllabs.com",
+                            "casecurity.ssllabs.com",
+                            "wosign.ssllabs.com",
+                            "akamai.ssllabs.com",
+                            "ota.ssllabs.com",
+                            "biznet.ssllabs.com",
+                            "trustzone.ssllabs.com",
+                            "comodo.ssllabs.com",
+                            "globaltrust.ssllabs.com",
+                            "secure128.ssllabs.com",
+                            "networking4all.ssllabs.com",
+                            "geocerts.ssllabs.com"
+                          ]
+                        },
+                        {
+                          "content_commitment": false,
+                          "critical": true,
+                          "crl_sign": false,
+                          "data_encipherment": false,
+                          "digital_signature": true,
+                          "keyUsage": ["digital_signature", "key_encipherment"],
+                          "key_agreement": false,
+                          "key_cert_sign": false,
+                          "key_encipherment": true,
+                          "name": "keyUsage"
+                        },
+                        {
+                          "critical": false,
+                          "extendedKeyUsage": ["serverAuth", "clientAuth"],
+                          "name": "extendedKeyUsage"
+                        },
+                        {
+                          "cRLDistributionPoints": [
+                            {
+                              "crl_issuer": "",
+                              "full_name": "http://crl3.digicert.com/DigiCertTLSRSASHA2562020CA1-4.crl",
+                              "reasons": null,
+                              "relative_name": null
+                            },
+                            {
+                              "crl_issuer": "",
+                              "full_name": "http://crl4.digicert.com/DigiCertTLSRSASHA2562020CA1-4.crl",
+                              "reasons": null,
+                              "relative_name": null
+                            }
+                          ],
+                          "critical": false,
+                          "name": "cRLDistributionPoints"
+                        },
+                        {
+                          "critical": false,
+                          "name": "certificatePolicies"
+                        },
+                        {
+                          "authorityInfoAccess": [
+                            {
+                              "access_location": "http://ocsp.digicert.com",
+                              "access_method": "OCSP"
+                            },
+                            {
+                              "access_location": "http://cacerts.digicert.com/DigiCertTLSRSASHA2562020CA1-1.crt",
+                              "access_method": "caIssuers"
+                            }
+                          ],
+                          "critical": false,
+                          "name": "authorityInfoAccess"
+                        },
+                        {
+                          "ca": false,
+                          "critical": false,
+                          "name": "basicConstraints",
+                          "path_length": null
+                        },
+                        {
+                          "critical": false,
+                          "name": "signedCertificateTimestampList",
+                          "signedCertificateTimestampList": [
+                            {
+                              "log_id": "e83ed0da3ef5063532e75728bc896bc903d3cbd1116beceb69e1777d6d06bd6e",
+                              "pre_certificate": true,
+                              "timestamp": "2022-03-15 06:24:01.276000",
+                              "version": "v1"
+                            },
+                            {
+                              "log_id": "35cf191bbfb16c57bf0fad4c6d42cbbbb627202651ea3fe12aefa803c33bd64c",
+                              "pre_certificate": true,
+                              "timestamp": "2022-03-15 06:24:01.251000",
+                              "version": "v1"
+                            },
+                            {
+                              "log_id": "b3737707e18450f86386d605a9dc11094a792db1670c0b87dcf0030e7936a59a",
+                              "pre_certificate": true,
+                              "timestamp": "2022-03-15 06:24:01.304000",
+                              "version": "v1"
+                            }
+                          ]
+                        }
+                      ],
+                      "certificate_intermediate_ca": false,
+                      "certificate_is_self_signed": false,
+                      "certificate_issuer": "DigiCert TLS RSA SHA256 2020 CA1",
+                      "certificate_issuer_country": "US",
+                      "certificate_key_compromised": false,
+                      "certificate_known_compromised": false,
+                      "certificate_md5_fingerprint": "d24062cf1bd77bb305ec2f48a3b4965d",
+                      "certificate_not_after": "2023-03-15T23:59:59",
+                      "certificate_not_before": "2022-03-15T00:00:00",
+                      "certificate_private_key_pem": "-----BEGIN PRIVATE KEY-----\nMIIBJwIBADANBgkqhkiG9w0BAQEFAASCAREwggENAgEAAoIBAQC/uyxQghAsy+wi\nexi/qAW9olo9HlK4rt6slXnseRpADctORbU/ARoH9HyjIcW1Eb7HNzfYRqMaMH6i\nVcz0x2h6QWbfu01cZjvbx7mfCuPXEmR6XeZpsQR9VrvQDU4URdWLgfP+UTdsPkaY\n5yDjnjrbXwlxcoDs826E/87XwLuT1cvTc3KzAaQWCgFIX/6L3Q/88IQrvaa+JuAl\nxJO56G2ZPQz7PlbWuerKNq3CwHAZfS9ZyFNca0+b0+8TeDBq1vB4J4PyeDz8fWxN\nH7/Al1n3pq9el5o7EtdaM17T2LpbCWTdIV5urOYw81ESwQqePFo1SGQulWlaiJCL\nyyhJOoPrAgMBAAE=\n-----END PRIVATE KEY-----\n",
+                      "certificate_public_key_curve": "",
+                      "certificate_public_key_exponent": 65537,
+                      "certificate_public_key_size": 2048,
+                      "certificate_public_key_type": "RSA",
+                      "certificate_root_ca": false,
+                      "certificate_san": [
+                        "ssllabs.com",
+                        "www.ssllabs.com",
+                        "api.ssllabs.com",
+                        "clienttest.ssllabs.com",
+                        "plaintext.ssllabs.com",
+                        "entrust.ssllabs.com",
+                        "globalsign.ssllabs.com",
+                        "casecurity.ssllabs.com",
+                        "wosign.ssllabs.com",
+                        "akamai.ssllabs.com",
+                        "ota.ssllabs.com",
+                        "biznet.ssllabs.com",
+                        "trustzone.ssllabs.com",
+                        "comodo.ssllabs.com",
+                        "globaltrust.ssllabs.com",
+                        "secure128.ssllabs.com",
+                        "networking4all.ssllabs.com",
+                        "geocerts.ssllabs.com"
+                      ],
+                      "certificate_serial_number": "30:62:33:66:33:32:34:30:62:34:35:66:34:35:65:32:35:63:36:31:61:62:66:62:34:61:38:35:37:63:63:65",
+                      "certificate_serial_number_decimal": 14949641902626831978591873907143572686,
+                      "certificate_serial_number_hex": "0xb3f3240b45f45e25c61abfb4a857cce",
+                      "certificate_sha1_fingerprint": "ce725c2981abf60e185cb64f954862b67ec32e84",
+                      "certificate_sha256_fingerprint": "c835d382f9bbad18cbe79321c3e9e948e0f316335310bb68896e3456c936b77f",
+                      "certificate_signature_algorithm": "sha256WithRSAEncryption",
+                      "certificate_spki_fingerprint": "300371e30059aa2ebddcd5a94341e5a8a8ec9622e4ff0a90db31e5a5c192a977",
+                      "certificate_subject": "/C=US/ST=California/L=Foster City/O=Qualys, Inc./CN=ssllabs.com",
+                      "certificate_subject_key_identifier": "022d0b65dda366450fa8e613207329078eec0742",
+                      "certificate_type": "Leaf Certificate",
+                      "certificate_valid": true,
+                      "certificate_validation_oid": "2.23.140.1.2.2",
+                      "certificate_validation_type": "Organization Validation (OV)",
+                      "certificate_version": 2,
+                      "certification_authority_authorization": true,
+                      "client_certificate_expected": false,
+                      "client_renegotiation": false,
+                      "compliance_results": {
+                        "fips_weak_cipher": false,
+                        "fips_weak_key": true,
+                        "fips_weak_protocol": true,
+                        "nist_mtls": false,
+                        "nist_weak_cipher": false,
+                        "nist_weak_key": true,
+                        "nist_weak_protocol": true,
+                        "pci_deprecated_algo": true,
+                        "pci_vuln_compression": true,
+                        "pci_vuln_renegotiation": true,
+                        "pci_vuln_session_resumption": false,
+                        "pci_weak_cipher": true,
+                        "pci_weak_key": true,
+                        "pci_weak_protocol": true
+                      },
+                      "compression_support": false,
+                      "dnssec": false,
+                      "dnssec_algorithm": "",
+                      "expiry_status": "Expires in 335 days",
+                      "forward_anonymity": true,
+                      "host": "ssllabs.com",
+                      "http1_1_support": true,
+                      "http1_support": false,
+                      "http2_cleartext_support": false,
+                      "http2_support": true,
+                      "http_coep": false,
+                      "http_coop": false,
+                      "http_corp": false,
+                      "http_csp": false,
+                      "http_expect_ct_report_uri": false,
+                      "http_hsts": false,
+                      "http_nosniff": true,
+                      "http_status_code": 302,
+                      "http_unsafe_referrer": false,
+                      "http_xfo": false,
+                      "http_xss_protection": true,
+                      "negotiated_cipher": "ECDHE-RSA-AES128-GCM-SHA256",
+                      "negotiated_cipher_bits": 128,
+                      "negotiated_protocol": "TLSv1.2 (0x303)",
+                      "offered_ciphers": [
+                        "TLS_AES_256_GCM_SHA384",
+                        "TLS_CHACHA20_POLY1305_SHA256",
+                        "TLS_AES_128_GCM_SHA256",
+                        "ECDHE-ECDSA-AES256-GCM-SHA384",
+                        "ECDHE-RSA-AES256-GCM-SHA384",
+                        "DHE-RSA-AES256-GCM-SHA384",
+                        "ECDHE-ECDSA-CHACHA20-POLY1305",
+                        "ECDHE-RSA-CHACHA20-POLY1305",
+                        "DHE-RSA-CHACHA20-POLY1305",
+                        "ECDHE-ECDSA-AES128-GCM-SHA256",
+                        "ECDHE-RSA-AES128-GCM-SHA256",
+                        "DHE-RSA-AES128-GCM-SHA256",
+                        "ECDHE-ECDSA-AES256-SHA384",
+                        "ECDHE-RSA-AES256-SHA384",
+                        "DHE-RSA-AES256-SHA256",
+                        "ECDHE-ECDSA-AES128-SHA256",
+                        "ECDHE-RSA-AES128-SHA256",
+                        "DHE-RSA-AES128-SHA256",
+                        "ECDHE-ECDSA-AES256-SHA",
+                        "ECDHE-RSA-AES256-SHA",
+                        "DHE-RSA-AES256-SHA",
+                        "ECDHE-ECDSA-AES128-SHA",
+                        "ECDHE-RSA-AES128-SHA",
+                        "DHE-RSA-AES128-SHA",
+                        "RSA-PSK-AES256-GCM-SHA384",
+                        "DHE-PSK-AES256-GCM-SHA384",
+                        "RSA-PSK-CHACHA20-POLY1305",
+                        "DHE-PSK-CHACHA20-POLY1305",
+                        "ECDHE-PSK-CHACHA20-POLY1305",
+                        "AES256-GCM-SHA384",
+                        "PSK-AES256-GCM-SHA384",
+                        "PSK-CHACHA20-POLY1305",
+                        "RSA-PSK-AES128-GCM-SHA256",
+                        "DHE-PSK-AES128-GCM-SHA256",
+                        "AES128-GCM-SHA256",
+                        "PSK-AES128-GCM-SHA256",
+                        "AES256-SHA256",
+                        "AES128-SHA256",
+                        "ECDHE-PSK-AES256-CBC-SHA384",
+                        "ECDHE-PSK-AES256-CBC-SHA",
+                        "SRP-RSA-AES-256-CBC-SHA",
+                        "SRP-AES-256-CBC-SHA",
+                        "RSA-PSK-AES256-CBC-SHA384",
+                        "DHE-PSK-AES256-CBC-SHA384",
+                        "RSA-PSK-AES256-CBC-SHA",
+                        "DHE-PSK-AES256-CBC-SHA",
+                        "AES256-SHA",
+                        "PSK-AES256-CBC-SHA384",
+                        "PSK-AES256-CBC-SHA",
+                        "ECDHE-PSK-AES128-CBC-SHA256",
+                        "ECDHE-PSK-AES128-CBC-SHA",
+                        "SRP-RSA-AES-128-CBC-SHA",
+                        "SRP-AES-128-CBC-SHA",
+                        "RSA-PSK-AES128-CBC-SHA256",
+                        "DHE-PSK-AES128-CBC-SHA256",
+                        "RSA-PSK-AES128-CBC-SHA",
+                        "DHE-PSK-AES128-CBC-SHA",
+                        "AES128-SHA",
+                        "PSK-AES128-CBC-SHA256",
+                        "PSK-AES128-CBC-SHA"
+                      ],
+                      "offered_tls_versions": [
+                        "TLSv1.3 (0x304)",
+                        "TLSv1.2 (0x303)"
+                      ],
+                      "peer_address": "64.41.200.100",
+                      "port": 443,
+                      "possible_phish_or_malicious": false,
+                      "preferred_protocol": "TLSv1.3 (0x304)",
+                      "revocation_crlite": false,
+                      "revocation_ocsp_must_staple": false,
+                      "revocation_ocsp_reason": null,
+                      "revocation_ocsp_response": "Successful",
+                      "revocation_ocsp_stapling": false,
+                      "revocation_ocsp_status": "Good",
+                      "revocation_ocsp_time": null,
+                      "scsv": false,
+                      "session_resumption_caching": true,
+                      "session_resumption_ticket_hint": true,
+                      "session_resumption_tickets": true,
+                      "sni_support": true,
+                      "strong_cipher": false,
+                      "tls_long_handshake_intolerance": false,
+                      "tls_version_interference": true,
+                      "tls_version_interference_versions": [
+                        "TLSv1.1 (0x302)",
+                        "TLSv1 (0x301)",
+                        "SSLv3 (0x300)",
+                        "SSLv2 (0x2ff)"
+                      ],
+                      "tls_version_intolerance": true,
+                      "tls_version_intolerance_versions": [
+                        "TLSv1.4 (0x305)",
+                        "TLSv1.8 (0x309)",
+                        "TLSv2 (0x400)",
+                        "TLSv2.1 (0x401)",
+                        "TLSv2.3 (0x404)"
+                      ],
+                      "tlsa": false,
+                      "trust_android": false,
+                      "trust_android_status": "",
+                      "trust_ccadb": false,
+                      "trust_ccadb_status": "",
+                      "trust_certifi": false,
+                      "trust_certifi_status": "",
+                      "trust_java": false,
+                      "trust_java_status": "",
+                      "trust_linux": false,
+                      "trust_linux_status": "",
+                      "trust_russia": false,
+                      "trust_russia_status": "",
+                      "verification_details": [
+                        "Your private key is exposed; Attackers in possession of the private key can impersonate the website, eavesdrop on encrypted traffic they have copied, or digitally sign malware on your behalf and distribute to target systems as you identified as the attacker",
+                        "This domain is not enabled for DNSSEC (rfc6840), DS and DNSKEY records were not provided",
+                        "Server preferred protocol TLSv1.3 (0x304) was avoided and TLSv1.2 (0x303) was negotiated instead, consider Signaling Cipher Suite Value (SCSV) for Preventing Protocol Downgrade Attacks (rfc7507)",
+                        "Session Resumption (caching) This server has confidentiality vulnerability and a tracking issue affecting privacy; rfc5246 recommends a lifetime of session IDs of less than 24 hours where afterwards the client attempts a resumption and only then the server falls back to a full handshake. The server can link both PSKs to the same user, session resumption caching allows a user identity to be shared with third-party trackers observing traffic on this server. Prior to TLS 1.3 this was a 0-RTT resumption which allows malicious actors to read all of the past communications using the same PSK. The flaw was detailed by rfc5077 in 2008 and web server default configurations have not widely adopted the changes.",
+                        "Session Resumption (tickets) A single key is used for the sessions of multiple users and is intended to mitigate privacy concerns of individual tracking, though a ticket identifier can be reused by a malicious actor for multiple or subsequent connections and decrypt all messages as resumed connections don't perform any Diffie-Hellman exchange, so they don't offer Forward Secrecy against the compromise of the STEK. This vulnerability was first identified by Adam Langley in 2013 which was built on works by M. Perry. in 2012",
+                        "Your server is not configured to accept clients that only support TLS version TLSv1.1 or older, these clients will be shown an error \"ERR_SSL_VERSION_INTERFERENCE\" and not negotiate a secure connection to your server.",
+                        "PCI DSS version 3.2.1 compliance requires that no known vulnerabilities are present",
+                        "FIPS 140-2 (NIST SP800-131A transition mode) compliance requires cipher bits to greater than 160, not be of Anonymous key exchange suites, Exchange ciphers, or many block ciphers",
+                        "NIST SP800-131A (strict mode) compliance requires cipher bits to greater than 160, not be of Anonymous key exchange suites, Exchange ciphers, or many block ciphers"
+                      ],
+                      "verification_results": {
+                        "avoid_deprecated_dnssec_algorithms": true,
+                        "avoid_deprecated_protocols": true,
+                        "avoid_known_weak_keys": true,
+                        "avoid_known_weak_signature_algorithm": true,
+                        "basic_constraints_ca": true,
+                        "certificate_valid_tls_usage": true,
+                        "common_name_defined": true,
+                        "common_name_valid": true,
+                        "issued_past_tense": true,
+                        "match_hostname": true,
+                        "not_expired": true,
+                        "not_revoked": true,
+                        "not_self_signed": true,
+                        "trusted_ca": true,
+                        "valid_caa": true
+                      },
+                      "weak_cipher": false
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient privileges for this action"
+          },
+          "404": {
+            "description": "No response for this domain name"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": ["msg"],
+        "type": "object",
+        "properties": {
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
 }

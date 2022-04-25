@@ -1,4 +1,4 @@
-Proprietary 
+Proprietary
 
 Do not distribute outside of Trivial Security.
 
