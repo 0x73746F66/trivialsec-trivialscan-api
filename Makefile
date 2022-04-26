@@ -1,7 +1,6 @@
 SHELL := /bin/bash
 -include .env
 export $(shell sed 's/=.*//' .env)
-.ONESHELL: # Applies to every targets in the file!
 .PHONY: help
 
 primary := '\033[1;36m'
@@ -13,11 +12,15 @@ help: ## This help.
 
 .DEFAULT_GOAL := help
 
-setup:
+deps: ## install dependancies for development of this project
+	pip install -U pip
+	pip install -U -r requirements-dev.txt
 	pip install -e .
-	pip install -r -U requirements-dev.txt
+
+setup: deps ## setup for development of this project
 	pre-commit install --hook-type pre-push --hook-type pre-commit
-	detect-secrets scan > .secrets.baseline
+	@ [ -f .secrets.baseline ] || ( detect-secrets scan > .secrets.baseline )
+	detect-secrets audit .secrets.baseline
 
 prep: ## Cleanup tmp files
 	@find . -type f -name '*.pyc' -delete 2>/dev/null
@@ -62,3 +65,11 @@ destroy: init ## tf destroy -auto-approve
 	terraform plan -destroy -no-color -out=.tfdestroy
 	terraform show --json .tfdestroy | jq -r '([.resource_changes[]?.change.actions?]|flatten)|{"create":(map(select(.=="create"))|length),"update":(map(select(.=="update"))|length),"delete":(map(select(.=="delete"))|length)}' > tfdestroy.json
 	terraform apply -auto-approve -destroy .tfdestroy
+
+test-local: ## Prettier test outputs
+	pre-commit run --all-files
+	semgrep -q --strict --timeout=0 --config=p/r2c-ci --lang=py src/**/*.py
+
+unit-test: ## run unit tests with coverage
+	coverage run -m pytest --nf
+	coverage report -m

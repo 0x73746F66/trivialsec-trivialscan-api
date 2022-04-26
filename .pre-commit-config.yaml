@@ -1,5 +1,4 @@
 ---
-exclude: "^{{cookiecutter\\.project_name}}/"
 default_language_version:
   python: python3.10
 
@@ -83,6 +82,13 @@ repos:
         language: system
         types: [python]
         require_serial: true
+      - id: pip-audit
+        name: pip-audit
+        language: system
+        entry: pip-audit
+        args: [-r]
+        types: [plain-text, non-executable, file]
+        files: ^(requirements)\.(txt)$
 
   - repo: https://github.com/Yelp/detect-secrets
     rev: v1.2.0
@@ -92,11 +98,6 @@ repos:
         language: python
         entry: detect-secrets-hook
         args: ["--baseline", ".secrets.baseline"]
-
-  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
-    rev: v1.2.4
-    hooks:
-      - id: python-safety-dependencies-check
 
   - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
     rev: v0.1.0

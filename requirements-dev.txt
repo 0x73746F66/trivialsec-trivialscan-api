@@ -12,3 +12,4 @@ black
 pre-commit
 checkov
 detect-secrets
+pip-audit
