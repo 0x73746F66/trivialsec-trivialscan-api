@@ -2,7 +2,7 @@ import json
 import logging
 from datetime import datetime, timedelta
 from os import getenv
-
+from tlstrust import TrustStore
 import boto3
 import trivialscan
 import validators
@@ -21,6 +21,7 @@ s3 = boto3.client("s3")
 
 APP_ENV = getenv("APP_ENV", "Dev")
 APP_NAME = getenv("APP_NAME", "trivialscan")
+DISABLE_CACHE = bool(getenv("DISABLE_CACHE"))
 
 
 def object_exists(bucket_name: str, file_path: str, **kwargs):
@@ -66,9 +67,22 @@ def ssm_secret(parameter: str, default=None, **kwargs) -> str:
 def check_tls(domain_name: str, **kwargs) -> dict:
     evaluation_start = datetime.utcnow()
     _, results = trivialscan.analyse(host=domain_name, **kwargs)
-    return trivialscan.to_dict(
+    data = trivialscan.to_dict(
         results, (datetime.utcnow() - evaluation_start).total_seconds()
     )
+    results = []
+    for validation in data["validations"]:
+        logger.info(validation["certificate_type"])
+        if validation["certificate_type"] == "Root CA":
+            trust_store = TrustStore(
+                validation["certificate_subject_key_identifier"]
+                if not validation.get("certification_authority_authorization")
+                else validation["certification_authority_authorization"]
+            )
+            validation["certificate_trust"] = trust_store.to_dict()
+        results.append(validation)
+    data["validations"] = results
+    return data
 
 
 def lambda_handler(event, context):  # pylint: disable=unused-argument
@@ -101,7 +115,7 @@ def lambda_handler(event, context):  # pylint: disable=unused-argument
     if validators.domain(domain_name) is not True:
         return {
             "statusCode": 422,
-            "body": json.dumps({"msg": f"Invalid domain name [{domain_name}]"}),
+            "body": json.dumps({"msg": f"Invalid domain name {domain_name}"}),
         }
     port = int(event["queryStringParameters"].get("port", 443))
     use_sni = bool(event["queryStringParameters"].get("use_sni", True))
@@ -111,7 +125,8 @@ def lambda_handler(event, context):  # pylint: disable=unused-argument
     logger.info(f"Reading {file_key} from {bucket_name}")
     json_data = None
     tls_data = None
-    if object_exists(bucket_name, file_key):
+    logger.info(APP_ENV)
+    if not DISABLE_CACHE and object_exists(bucket_name, file_key):
         obj = s3.get_object(Bucket=bucket_name, Key=file_key)
         stored_raw = obj.get("Body", "").read().strip()
         stored_data = json.loads(stored_raw)

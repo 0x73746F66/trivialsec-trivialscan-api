@@ -6,6 +6,7 @@ LABEL org.opencontainers.image.source="https://gitlab.com/trivialsec/trivialscan
 
 ENV PYTHONPATH ${PYTHONPATH}
 
+COPY requirements.txt .
 COPY setup.py .
 RUN echo "Installing from setup.py" \
     && python -m pip install --progress-bar off -U --no-cache-dir -e .

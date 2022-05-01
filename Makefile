@@ -50,8 +50,6 @@ tfinstall:
 init:  ## Runs tf init tf
 	terraform init -reconfigure -upgrade=true
 
-deploy: plan apply
-
 plan: init ## Runs tf validate and tf plan
 	terraform validate
 	terraform plan -no-color -out=.tfplan

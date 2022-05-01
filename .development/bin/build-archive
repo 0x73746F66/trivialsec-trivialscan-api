@@ -26,4 +26,4 @@ echo -e "${PRIMARY}Archiving ${SOURCE_FILE}${NC}"
 cd .${BUILD_ENV}/${PYTHON_VERSION}/site-packages
 zip -r ${CWD}/${SOURCE_FILE} ./* -x "*.dist-info*" -x "*__pycache__*" -x "*.egg-info*"
 cd ${CWD}/src
-zip -r ${CWD}/${SOURCE_FILE} ./* -x "*.dist-info*" -x "*__pycache__*" -x "*.egg-info*"
+zip -r ${CWD}/${SOURCE_FILE} ./* -x "*.dist-info*" -x "*__pycache__*" -x "*.egg-info*" -x "run.py"
