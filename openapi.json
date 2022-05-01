@@ -2,7 +2,7 @@
   "openapi": "3.0.2",
   "info": {
     "title": "Trivial Scanner - SSL/TLS DNS HTTP Analyser - Qualys SSL Labs alternative",
-    "version": "0.0.1"
+    "version": "0.0.4"
   },
   "servers": [
     {

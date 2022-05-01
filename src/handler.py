@@ -79,7 +79,9 @@ def check_tls(domain_name: str, **kwargs) -> dict:
                 if not validation.get("certification_authority_authorization")
                 else validation["certification_authority_authorization"]
             )
-            validation["certificate_trust"] = trust_store.to_dict()
+            validation["certificate_trust"] = trust_store.to_dict().get(
+                "trust_stores", []
+            )
         results.append(validation)
     data["validations"] = results
     return data
