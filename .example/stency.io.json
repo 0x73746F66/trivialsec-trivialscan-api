@@ -1,0 +1,2327 @@
+{
+  "date": "2022-05-04T08:05:56",
+  "evaluation_api_processing": 16.947226,
+  "evaluation_duration_seconds": 16.579681,
+  "generator": "trivialscan==2.3.3",
+  "validations": [
+    {
+      "certificate_authority_key_identifier": "79b459e67bb6e5e40173800888c81a58f6e99b6e",
+      "certificate_common_name": "R3",
+      "certificate_expired": false,
+      "certificate_extensions": [
+        {
+          "content_commitment": false,
+          "critical": true,
+          "crl_sign": true,
+          "data_encipherment": false,
+          "digital_signature": true,
+          "keyUsage": ["digital_signature", "key_cert_sign", "crl_sign"],
+          "key_agreement": false,
+          "key_cert_sign": true,
+          "key_encipherment": false,
+          "name": "keyUsage"
+        },
+        {
+          "critical": false,
+          "extendedKeyUsage": ["clientAuth", "serverAuth"],
+          "name": "extendedKeyUsage"
+        },
+        {
+          "ca": true,
+          "critical": true,
+          "name": "basicConstraints",
+          "path_length": 0
+        },
+        {
+          "critical": false,
+          "name": "subjectKeyIdentifier",
+          "subjectKeyIdentifier": "142eb317b75856cbae500940e61faf9d8b14c2c6"
+        },
+        {
+          "authorityKeyIdentifier": "79b459e67bb6e5e40173800888c81a58f6e99b6e",
+          "authority_cert_issuer": "",
+          "authority_cert_serial_number": null,
+          "critical": false,
+          "name": "authorityKeyIdentifier"
+        },
+        {
+          "authorityInfoAccess": [
+            {
+              "access_location": "http://x1.i.lencr.org/",
+              "access_method": "caIssuers"
+            }
+          ],
+          "critical": false,
+          "name": "authorityInfoAccess"
+        },
+        {
+          "cRLDistributionPoints": [
+            {
+              "crl_issuer": "",
+              "full_name": "http://x1.c.lencr.org/",
+              "reasons": null,
+              "relative_name": null
+            }
+          ],
+          "critical": false,
+          "name": "cRLDistributionPoints"
+        },
+        {
+          "critical": false,
+          "name": "certificatePolicies"
+        }
+      ],
+      "certificate_intermediate_ca": true,
+      "certificate_is_self_signed": false,
+      "certificate_issuer": "ISRG Root X1",
+      "certificate_issuer_country": "US",
+      "certificate_key_compromised": false,
+      "certificate_known_compromised": false,
+      "certificate_md5_fingerprint": "e829e65d7c4307d6fbc13c179e037a36",
+      "certificate_not_after": "2025-09-15T16:00:00",
+      "certificate_not_before": "2020-09-04T00:00:00",
+      "certificate_private_key_pem": "-----BEGIN PRIVATE KEY-----\nMIIBJwIBADANBgkqhkiG9w0BAQEFAASCAREwggENAgEAAoIBAQC7AhUozPaglNMP\nEuyNVZLD+ILxmaZ6QoinXSaqtSu5xUyxr45r+XXIo9cPR5QUVTVXjJ6oojkZ9YI8\nQqlObvU7wy7bjcCwXPNZOOftz2nwWgsbvsCUJCWH+jdxsxPnHKzhm+/b5DtFUkWW\nqcFTzjTIUu61ru2P3mBw4qVUq7ZtDpelQDRrK9O8ZutmNHz6a4uPVymZ+DAXXbpy\nb/uBxa3Shlg9F8fnCbvxK/eG3MHacV3URuPMrSXBiLxgZ3Vms/EY96Jc5lP/Ooi2\nR6X/ExjqmAl3P51T+c8B5fWmcBcUr2Ok/5mzk53cU6cG/kiFHaFpriV1uxPMUgP1\n7VGhi9sVAgMBAAE=\n-----END PRIVATE KEY-----\n",
+      "certificate_public_key_curve": "",
+      "certificate_public_key_exponent": 65537,
+      "certificate_public_key_size": 2048,
+      "certificate_public_key_type": "RSA",
+      "certificate_root_ca": false,
+      "certificate_san": [],
+      "certificate_serial_number": "39:31:32:62:30:38:34:61:63:66:30:63:31:38:61:37:35:33:66:36:64:36:32:65:32:35:61:37:35:66:35:61",
+      "certificate_serial_number_decimal": 192961496339968674994309121183282847578,
+      "certificate_serial_number_hex": "0x912b084acf0c18a753f6d62e25a75f5a",
+      "certificate_sha1_fingerprint": "a053375bfe84e8b748782c7cee15827a6af5a405",
+      "certificate_sha256_fingerprint": "67add1166b020ae61b8f5fc96813c04c2aa589960796865572a3c7e737613dfd",
+      "certificate_signature_algorithm": "sha256WithRSAEncryption",
+      "certificate_spki_fingerprint": "8d02536c887482bc34ff54e41d2ba659bf85b341a0a20afadb5813dcfbcf286d",
+      "certificate_subject": "/C=US/O=Let's Encrypt/CN=R3",
+      "certificate_subject_key_identifier": "142eb317b75856cbae500940e61faf9d8b14c2c6",
+      "certificate_type": "Intermediate CA",
+      "certificate_valid": true,
+      "certificate_validation_oid": "2.23.140.1.2.1",
+      "certificate_validation_type": "Domain Validation (DV)",
+      "certificate_version": 2,
+      "certification_authority_authorization": false,
+      "client_certificate_expected": false,
+      "client_renegotiation": false,
+      "compliance_results": {
+        "fips_weak_key": true,
+        "nist_weak_key": true,
+        "pci_weak_key": true
+      },
+      "compression_support": false,
+      "dnssec": false,
+      "dnssec_algorithm": "",
+      "expiry_status": "Expires in 1230 days (3 years)",
+      "forward_anonymity": false,
+      "host": "",
+      "http1_1_support": false,
+      "http1_support": false,
+      "http2_cleartext_support": false,
+      "http2_support": false,
+      "http_coep": false,
+      "http_coop": false,
+      "http_corp": false,
+      "http_csp": false,
+      "http_expect_ct_report_uri": false,
+      "http_hsts": false,
+      "http_nosniff": false,
+      "http_status_code": 0,
+      "http_unsafe_referrer": false,
+      "http_xfo": false,
+      "http_xss_protection": false,
+      "negotiated_cipher": "",
+      "negotiated_cipher_bits": 0,
+      "negotiated_protocol": "",
+      "offered_ciphers": [],
+      "offered_tls_versions": [],
+      "peer_address": "",
+      "port": 443,
+      "possible_phish_or_malicious": false,
+      "preferred_protocol": "",
+      "revocation_crlite": false,
+      "revocation_ocsp_must_staple": false,
+      "revocation_ocsp_reason": "",
+      "revocation_ocsp_response": "",
+      "revocation_ocsp_stapling": false,
+      "revocation_ocsp_status": "",
+      "revocation_ocsp_time": "",
+      "scsv": false,
+      "session_resumption_caching": false,
+      "session_resumption_ticket_hint": false,
+      "session_resumption_tickets": false,
+      "sni_support": false,
+      "strong_cipher": false,
+      "tls_long_handshake_intolerance": false,
+      "tls_version_interference": false,
+      "tls_version_interference_versions": [],
+      "tls_version_intolerance": false,
+      "tls_version_intolerance_versions": [],
+      "tlsa": false,
+      "trust_android": false,
+      "trust_android_status": "",
+      "trust_bsd": false,
+      "trust_bsd_status": "",
+      "trust_ccadb": false,
+      "trust_ccadb_status": "",
+      "trust_certifi": false,
+      "trust_certifi_status": "",
+      "trust_dart": false,
+      "trust_dart_status": "",
+      "trust_elixir": false,
+      "trust_elixir_status": "",
+      "trust_erlang": false,
+      "trust_erlang_status": "",
+      "trust_go": false,
+      "trust_go_status": "",
+      "trust_java": false,
+      "trust_java_status": "",
+      "trust_libcurl": false,
+      "trust_libcurl_status": "",
+      "trust_linux": false,
+      "trust_linux_status": "",
+      "trust_node": false,
+      "trust_node_status": "",
+      "trust_ruby": false,
+      "trust_ruby_status": "",
+      "trust_russia": false,
+      "trust_russia_status": "",
+      "trust_rustls": false,
+      "trust_rustls_status": "",
+      "verification_details": [
+        "Your private key is exposed; Attackers in possession of the private key can impersonate the website, eavesdrop on encrypted traffic they have copied, or digitally sign malware on your behalf and distribute to target systems as you identified as the attacker"
+      ],
+      "verification_results": {
+        "avoid_known_weak_keys": true,
+        "avoid_known_weak_signature_algorithm": true,
+        "common_name_defined": true,
+        "issued_past_tense": true,
+        "not_expired": true,
+        "not_revoked": true,
+        "not_self_signed": true
+      },
+      "weak_cipher": false
+    },
+    {
+      "certificate_authority_key_identifier": "c4a7b1a47b2c71fadbe14b9075ffc41560858910",
+      "certificate_common_name": "ISRG Root X1",
+      "certificate_expired": false,
+      "certificate_extensions": [
+        {
+          "ca": true,
+          "critical": true,
+          "name": "basicConstraints",
+          "path_length": null
+        },
+        {
+          "content_commitment": false,
+          "critical": true,
+          "crl_sign": true,
+          "data_encipherment": false,
+          "digital_signature": false,
+          "keyUsage": ["key_cert_sign", "crl_sign"],
+          "key_agreement": false,
+          "key_cert_sign": true,
+          "key_encipherment": false,
+          "name": "keyUsage"
+        },
+        {
+          "authorityInfoAccess": [
+            {
+              "access_location": "http://apps.identrust.com/roots/dstrootcax3.p7c",
+              "access_method": "caIssuers"
+            }
+          ],
+          "critical": false,
+          "name": "authorityInfoAccess"
+        },
+        {
+          "authorityKeyIdentifier": "c4a7b1a47b2c71fadbe14b9075ffc41560858910",
+          "authority_cert_issuer": "",
+          "authority_cert_serial_number": null,
+          "critical": false,
+          "name": "authorityKeyIdentifier"
+        },
+        {
+          "critical": false,
+          "name": "certificatePolicies"
+        },
+        {
+          "cRLDistributionPoints": [
+            {
+              "crl_issuer": "",
+              "full_name": "http://crl.identrust.com/DSTROOTCAX3CRL.crl",
+              "reasons": null,
+              "relative_name": null
+            }
+          ],
+          "critical": false,
+          "name": "cRLDistributionPoints"
+        },
+        {
+          "critical": false,
+          "name": "subjectKeyIdentifier",
+          "subjectKeyIdentifier": "79b459e67bb6e5e40173800888c81a58f6e99b6e"
+        }
+      ],
+      "certificate_intermediate_ca": true,
+      "certificate_is_self_signed": false,
+      "certificate_issuer": "DST Root CA X3",
+      "certificate_issuer_country": null,
+      "certificate_key_compromised": false,
+      "certificate_known_compromised": false,
+      "certificate_md5_fingerprint": "c1e1ff07f9f688498274d1a18053eabf",
+      "certificate_not_after": "2024-09-30T18:14:03",
+      "certificate_not_before": "2021-01-20T19:14:03",
+      "certificate_private_key_pem": "-----BEGIN PRIVATE KEY-----\nMIICJwIBADANBgkqhkiG9w0BAQEFAASCAhEwggINAgEAAoICAQCt6CRz9BQ385ue\nK1coHIe+3LffOJCMbjzmV6B493XCov71am72AE8o295ohmxEk7axY/0UEmu/H9Lq\nMZshftEzPLpI9d1537O4/xLxIZpLwYqGcWlKZmZsj348cL+tKSIG8+TA5oCu4kuP\nt5l+lAOf00eXfJlII1PoOK5PCm+DLtFJV4yAdLbaL9A4jXsDcCEbdfIwPPqPrt3a\nY6vrFk/CjhFLfs8L6P+1dy70sntK4EwSJQxwjQMpoOFTJOwT2e4ZvxCzSow/iaNh\nUd6shweU9GNx7C7ib1uYgeGJXDR5bHbvO5BieebbpJovJsXQEOEO3tkQjhb7t/eo\n98flAgeYjzYIlefiN5YNNnWe+w5ysR2bvAP5SQXYgd0FtCrWQemsAXaVCg/Y39W9\nEh81LygXbNKYwagJZHduRze6zqxZXmidf3LWicUGQSk+WT7dJvUkyRGnWqNMQB9G\noZm1pzpRboY7nn1ypxIFeFntPlF4FQsDj43QLwWyPntKHEtzBRL8xurgUBN8Q5N0\ns8p0544fAQjQMNRbcTa0B7rBMDBcSLeCO5imfWCKoqMpgsy6vYMEG6KDA0Gh1gXx\nG8K28Kh8hjtGqEgqiNx2mna/H2qlPRmP6zjzZN7IKw0KKP/32+IVQtQi0Cdd4Xn+\nGOdwiK1O5tmLOsbdJ1Fu/7xk9TNDTwIDAQAB\n-----END PRIVATE KEY-----\n",
+      "certificate_public_key_curve": "",
+      "certificate_public_key_exponent": 65537,
+      "certificate_public_key_size": 4096,
+      "certificate_public_key_type": "RSA",
+      "certificate_root_ca": false,
+      "certificate_san": [],
+      "certificate_serial_number": "34:30:30:31:37:37:32:31:33:37:64:34:65:39:34:32:62:38:65:65:37:36:61:61:33:63:36:34:30:61:62:37",
+      "certificate_serial_number_decimal": 85078200265644417569109389142156118711,
+      "certificate_serial_number_hex": "0x4001772137d4e942b8ee76aa3c640ab7",
+      "certificate_sha1_fingerprint": "933c6ddee95c9c41a40f9f50493d82be03ad87bf",
+      "certificate_sha256_fingerprint": "6d99fb265eb1c5b3744765fcbc648f3cd8e1bffafdc4c2f99b9d47cf7ff1c24f",
+      "certificate_signature_algorithm": "sha256WithRSAEncryption",
+      "certificate_spki_fingerprint": "0b9fa5a59eed715c26c1020c711b4f6ec42d58b0015e14337a39dad301c5afc3",
+      "certificate_subject": "/C=US/O=Internet Security Research Group/CN=ISRG Root X1",
+      "certificate_subject_key_identifier": "79b459e67bb6e5e40173800888c81a58f6e99b6e",
+      "certificate_type": "Intermediate CA",
+      "certificate_valid": true,
+      "certificate_validation_oid": "2.23.140.1.2.1",
+      "certificate_validation_type": "Domain Validation (DV)",
+      "certificate_version": 2,
+      "certification_authority_authorization": false,
+      "client_certificate_expected": false,
+      "client_renegotiation": false,
+      "compliance_results": {
+        "fips_weak_key": true,
+        "nist_weak_key": true,
+        "pci_weak_key": true
+      },
+      "compression_support": false,
+      "dnssec": false,
+      "dnssec_algorithm": "",
+      "expiry_status": "Expires in 880 days (2 years)",
+      "forward_anonymity": false,
+      "host": "",
+      "http1_1_support": false,
+      "http1_support": false,
+      "http2_cleartext_support": false,
+      "http2_support": false,
+      "http_coep": false,
+      "http_coop": false,
+      "http_corp": false,
+      "http_csp": false,
+      "http_expect_ct_report_uri": false,
+      "http_hsts": false,
+      "http_nosniff": false,
+      "http_status_code": 0,
+      "http_unsafe_referrer": false,
+      "http_xfo": false,
+      "http_xss_protection": false,
+      "negotiated_cipher": "",
+      "negotiated_cipher_bits": 0,
+      "negotiated_protocol": "",
+      "offered_ciphers": [],
+      "offered_tls_versions": [],
+      "peer_address": "",
+      "port": 443,
+      "possible_phish_or_malicious": false,
+      "preferred_protocol": "",
+      "revocation_crlite": false,
+      "revocation_ocsp_must_staple": false,
+      "revocation_ocsp_reason": "",
+      "revocation_ocsp_response": "",
+      "revocation_ocsp_stapling": false,
+      "revocation_ocsp_status": "",
+      "revocation_ocsp_time": "",
+      "scsv": false,
+      "session_resumption_caching": false,
+      "session_resumption_ticket_hint": false,
+      "session_resumption_tickets": false,
+      "sni_support": false,
+      "strong_cipher": false,
+      "tls_long_handshake_intolerance": false,
+      "tls_version_interference": false,
+      "tls_version_interference_versions": [],
+      "tls_version_intolerance": false,
+      "tls_version_intolerance_versions": [],
+      "tlsa": false,
+      "trust_android": false,
+      "trust_android_status": "",
+      "trust_bsd": false,
+      "trust_bsd_status": "",
+      "trust_ccadb": false,
+      "trust_ccadb_status": "",
+      "trust_certifi": false,
+      "trust_certifi_status": "",
+      "trust_dart": false,
+      "trust_dart_status": "",
+      "trust_elixir": false,
+      "trust_elixir_status": "",
+      "trust_erlang": false,
+      "trust_erlang_status": "",
+      "trust_go": false,
+      "trust_go_status": "",
+      "trust_java": false,
+      "trust_java_status": "",
+      "trust_libcurl": false,
+      "trust_libcurl_status": "",
+      "trust_linux": false,
+      "trust_linux_status": "",
+      "trust_node": false,
+      "trust_node_status": "",
+      "trust_ruby": false,
+      "trust_ruby_status": "",
+      "trust_russia": false,
+      "trust_russia_status": "",
+      "trust_rustls": false,
+      "trust_rustls_status": "",
+      "verification_details": [
+        "Your private key is exposed; Attackers in possession of the private key can impersonate the website, eavesdrop on encrypted traffic they have copied, or digitally sign malware on your behalf and distribute to target systems as you identified as the attacker"
+      ],
+      "verification_results": {
+        "avoid_known_weak_keys": true,
+        "avoid_known_weak_signature_algorithm": true,
+        "common_name_defined": true,
+        "issued_past_tense": true,
+        "not_expired": true,
+        "not_revoked": true,
+        "not_self_signed": true
+      },
+      "weak_cipher": false
+    },
+    {
+      "certificate_authority_key_identifier": null,
+      "certificate_common_name": "ISRG Root X1",
+      "certificate_expired": false,
+      "certificate_extensions": [
+        {
+          "content_commitment": false,
+          "critical": true,
+          "crl_sign": true,
+          "data_encipherment": false,
+          "digital_signature": false,
+          "keyUsage": ["key_cert_sign", "crl_sign"],
+          "key_agreement": false,
+          "key_cert_sign": true,
+          "key_encipherment": false,
+          "name": "keyUsage"
+        },
+        {
+          "ca": true,
+          "critical": true,
+          "name": "basicConstraints",
+          "path_length": null
+        },
+        {
+          "critical": false,
+          "name": "subjectKeyIdentifier",
+          "subjectKeyIdentifier": "79b459e67bb6e5e40173800888c81a58f6e99b6e"
+        }
+      ],
+      "certificate_intermediate_ca": false,
+      "certificate_is_self_signed": false,
+      "certificate_issuer": "ISRG Root X1",
+      "certificate_issuer_country": "US",
+      "certificate_key_compromised": false,
+      "certificate_known_compromised": false,
+      "certificate_md5_fingerprint": "0cd2f9e0da1773e9ed864da5e370e74e",
+      "certificate_not_after": "2035-06-04T11:04:38",
+      "certificate_not_before": "2015-06-04T11:04:38",
+      "certificate_private_key_pem": "-----BEGIN PRIVATE KEY-----\nMIICJwIBADANBgkqhkiG9w0BAQEFAASCAhEwggINAgEAAoICAQCt6CRz9BQ385ue\nK1coHIe+3LffOJCMbjzmV6B493XCov71am72AE8o295ohmxEk7axY/0UEmu/H9Lq\nMZshftEzPLpI9d1537O4/xLxIZpLwYqGcWlKZmZsj348cL+tKSIG8+TA5oCu4kuP\nt5l+lAOf00eXfJlII1PoOK5PCm+DLtFJV4yAdLbaL9A4jXsDcCEbdfIwPPqPrt3a\nY6vrFk/CjhFLfs8L6P+1dy70sntK4EwSJQxwjQMpoOFTJOwT2e4ZvxCzSow/iaNh\nUd6shweU9GNx7C7ib1uYgeGJXDR5bHbvO5BieebbpJovJsXQEOEO3tkQjhb7t/eo\n98flAgeYjzYIlefiN5YNNnWe+w5ysR2bvAP5SQXYgd0FtCrWQemsAXaVCg/Y39W9\nEh81LygXbNKYwagJZHduRze6zqxZXmidf3LWicUGQSk+WT7dJvUkyRGnWqNMQB9G\noZm1pzpRboY7nn1ypxIFeFntPlF4FQsDj43QLwWyPntKHEtzBRL8xurgUBN8Q5N0\ns8p0544fAQjQMNRbcTa0B7rBMDBcSLeCO5imfWCKoqMpgsy6vYMEG6KDA0Gh1gXx\nG8K28Kh8hjtGqEgqiNx2mna/H2qlPRmP6zjzZN7IKw0KKP/32+IVQtQi0Cdd4Xn+\nGOdwiK1O5tmLOsbdJ1Fu/7xk9TNDTwIDAQAB\n-----END PRIVATE KEY-----\n",
+      "certificate_public_key_curve": "",
+      "certificate_public_key_exponent": 65537,
+      "certificate_public_key_size": 4096,
+      "certificate_public_key_type": "RSA",
+      "certificate_root_ca": true,
+      "certificate_san": [],
+      "certificate_serial_number": "38:32:31:30:63:66:62:30:64:32:34:30:65:33:35:39:34:34:36:33:65:30:62:62:36:33:38:32:38:62:30:30",
+      "certificate_serial_number_decimal": 172886928669790476064670243504169061120,
+      "certificate_serial_number_hex": "0x8210cfb0d240e3594463e0bb63828b00",
+      "certificate_sha1_fingerprint": "cabd2a79a1076a31f21d253635cb039d4329a5e8",
+      "certificate_sha256_fingerprint": "96bcec06264976f37460779acf28c5a7cfe8a3c0aae11a8ffcee05c0bddf08c6",
+      "certificate_signature_algorithm": "sha256WithRSAEncryption",
+      "certificate_spki_fingerprint": "0b9fa5a59eed715c26c1020c711b4f6ec42d58b0015e14337a39dad301c5afc3",
+      "certificate_subject": "/C=US/O=Internet Security Research Group/CN=ISRG Root X1",
+      "certificate_subject_key_identifier": "79b459e67bb6e5e40173800888c81a58f6e99b6e",
+      "certificate_trust": [
+        {
+          "description": "Root CA Certificate present in Java SE java 18.0.1 2022-04-19 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Java(TM) SE Runtime Environment",
+          "short_name": "Java SE"
+        },
+        {
+          "description": "Root CA Certificate present in CCADB 2022.04.29 Trust Store (Mozilla, Microsoft, and Apple)",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Common Certificate Authority Database (CCADB)",
+          "short_name": "CCADB"
+        },
+        {
+          "description": "Root CA Certificate present in Rust 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Rustls (curated CCADB)",
+          "short_name": "Rust"
+        },
+        {
+          "description": "Root CA Certificate present in Google android_latest Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Google Trust Services",
+          "short_name": "Google"
+        },
+        {
+          "description": "No Root CA Certificate in the Android 2.2 Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Android 2.2 (Froyo) 2010",
+          "short_name": "Android 2.2"
+        },
+        {
+          "description": "No Root CA Certificate in the Android 2.3 Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Android 2.3 (Gingerbread) 2010",
+          "short_name": "Android 2.3"
+        },
+        {
+          "description": "No Root CA Certificate in the Android 3 Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Android 3 (Honeycomb) 2011",
+          "short_name": "Android 3"
+        },
+        {
+          "description": "No Root CA Certificate in the Android 4 Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Android 4 (Ice Cream Sandwich) 2011",
+          "short_name": "Android 4"
+        },
+        {
+          "description": "No Root CA Certificate in the Android 4.4 Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Android 4.4 (KitKat) 2013",
+          "short_name": "Android 4.4"
+        },
+        {
+          "description": "No Root CA Certificate in the Android 7 Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Android 7 (Nougat) 2016",
+          "short_name": "Android 7"
+        },
+        {
+          "description": "Root CA Certificate present in Android 8 android_8 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Android 8 (Oreo) 2017",
+          "short_name": "Android 8"
+        },
+        {
+          "description": "Root CA Certificate present in Android 9 android_9 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Android 9 (Pie) 2018",
+          "short_name": "Android 9"
+        },
+        {
+          "description": "Root CA Certificate present in Android 10 android_10 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Android 10 (Quince Tart) 2019",
+          "short_name": "Android 10"
+        },
+        {
+          "description": "Root CA Certificate present in Android 11 android_11 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Android 11 (Red Velvet Cake) 2020",
+          "short_name": "Android 11"
+        },
+        {
+          "description": "Root CA Certificate present in Android 12 android_12 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Android 12 (Snow Cone) 2021",
+          "short_name": "Android 12"
+        },
+        {
+          "description": "Root CA Certificate present in Android 13 android_13 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Android 13 (Tiramisu) 2022",
+          "short_name": "Android 13"
+        },
+        {
+          "description": "Root CA Certificate present in Android 14 android_14 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Android 14 (Upside Down Cake) 2023",
+          "short_name": "Android 14"
+        },
+        {
+          "description": "Root CA Certificate present in certifi certifi==2021.10.08 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "certifi (Python module)",
+          "short_name": "certifi"
+        },
+        {
+          "description": "No Root CA Certificate in the Russian Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "MinTsifry Rossii",
+          "short_name": "Russian"
+        },
+        {
+          "description": "Root CA Certificate present in libcurl 2022.05.03 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "libcurl",
+          "short_name": "libcurl"
+        },
+        {
+          "description": "Root CA Certificate present in Dart 2022.05.03 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Dart Native",
+          "short_name": "Dart"
+        },
+        {
+          "description": "Root CA Certificate present in Windows 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Microsoft Windows",
+          "short_name": "Windows"
+        },
+        {
+          "description": "Root CA Certificate present in Apple 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Apple devices",
+          "short_name": "Apple"
+        },
+        {
+          "description": "Root CA Certificate present in Arch Linux 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Linux (Arch)",
+          "short_name": "Arch Linux"
+        },
+        {
+          "description": "Root CA Certificate present in Fedora 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Linux (Fedora)",
+          "short_name": "Fedora"
+        },
+        {
+          "description": "Root CA Certificate present in Debian 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Linux (Debian)",
+          "short_name": "Debian"
+        },
+        {
+          "description": "Root CA Certificate present in Ubuntu 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Linux (Ubuntu)",
+          "short_name": "Ubuntu"
+        },
+        {
+          "description": "Root CA Certificate present in Alpine 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Linux (Apline)",
+          "short_name": "Alpine"
+        },
+        {
+          "description": "Root CA Certificate present in Centos 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Linux (Centos)",
+          "short_name": "Centos"
+        },
+        {
+          "description": "Root CA Certificate present in RHEL 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Linux (RHEL)",
+          "short_name": "RHEL"
+        },
+        {
+          "description": "Root CA Certificate present in OpenBSD 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "OpenBSD",
+          "short_name": "OpenBSD"
+        },
+        {
+          "description": "Root CA Certificate present in FreeBSD 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "FreeBSD",
+          "short_name": "FreeBSD"
+        },
+        {
+          "description": "Root CA Certificate present in Android FOSS android_latest Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Android (open source)",
+          "short_name": "Android FOSS"
+        },
+        {
+          "description": "Root CA Certificate present in Android latest android_latest Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Android (latest Google build)",
+          "short_name": "Android latest"
+        },
+        {
+          "description": "Root CA Certificate present in Roku 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Roku",
+          "short_name": "Roku"
+        },
+        {
+          "description": "Root CA Certificate present in Python on Windows 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Python built-in https module on Windows",
+          "short_name": "Python on Windows"
+        },
+        {
+          "description": "Root CA Certificate present in Python on Linux 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Python built-in https module on Linux",
+          "short_name": "Python on Linux"
+        },
+        {
+          "description": "Root CA Certificate present in Python on Apple 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Python built-in https module on Apple",
+          "short_name": "Python on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in urllib certifi==2021.10.08 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "urllib (Python module)",
+          "short_name": "urllib"
+        },
+        {
+          "description": "Root CA Certificate present in requests certifi==2021.10.08 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "requests (Python module)",
+          "short_name": "requests"
+        },
+        {
+          "description": "Root CA Certificate present in Django certifi==2021.10.08 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Django (Python module)",
+          "short_name": "Django"
+        },
+        {
+          "description": "Root CA Certificate present in Go on Windows 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Go built-in https module on Windows",
+          "short_name": "Go on Windows"
+        },
+        {
+          "description": "Root CA Certificate present in Go on Linux 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Go built-in https module on Linux",
+          "short_name": "Go on Linux"
+        },
+        {
+          "description": "Root CA Certificate present in Go on Apple 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Go built-in https module on Apple",
+          "short_name": "Go on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in gocertifi certifi==2021.10.08 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "gocertifi (Go module)",
+          "short_name": "gocertifi"
+        },
+        {
+          "description": "Root CA Certificate present in Erlang on Windows 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Erlang built-in https module on Windows",
+          "short_name": "Erlang on Windows"
+        },
+        {
+          "description": "Root CA Certificate present in Erlang on Linux 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Erlang built-in https module on Linux",
+          "short_name": "Erlang on Linux"
+        },
+        {
+          "description": "Root CA Certificate present in Erlang on Apple 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Erlang built-in https module on Apple",
+          "short_name": "Erlang on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in erlang-certifi certifi==2021.10.08 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "certifi (Erlang library)",
+          "short_name": "erlang-certifi"
+        },
+        {
+          "description": "Root CA Certificate present in Ruby on Windows 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Ruby built-in https module on Windows",
+          "short_name": "Ruby on Windows"
+        },
+        {
+          "description": "Root CA Certificate present in Ruby on Linux 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Ruby built-in https module on Linux",
+          "short_name": "Ruby on Linux"
+        },
+        {
+          "description": "Root CA Certificate present in Ruby on Apple 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Ruby built-in https module on Apple",
+          "short_name": "Ruby on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in ruby-certifi certifi==2021.10.08 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "certifi (Ruby gem)",
+          "short_name": "ruby-certifi"
+        },
+        {
+          "description": "Root CA Certificate present in Node.js on Windows 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Node.js built-in https module on Windows",
+          "short_name": "Node.js on Windows"
+        },
+        {
+          "description": "Root CA Certificate present in Node.js on Linux 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Node.js built-in https module on Linux",
+          "short_name": "Node.js on Linux"
+        },
+        {
+          "description": "Root CA Certificate present in Node.js on Apple 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Node.js built-in https module on Apple",
+          "short_name": "Node.js on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in node-certifi certifi==2021.10.08 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "certifi (Node.js package)",
+          "short_name": "node-certifi"
+        },
+        {
+          "description": "Root CA Certificate present in Rust on Windows 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Rust using Rustls crate on Windows",
+          "short_name": "Rust on Windows"
+        },
+        {
+          "description": "Root CA Certificate present in Rust on Linux 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Rust using Rustls crate on Linux",
+          "short_name": "Rust on Linux"
+        },
+        {
+          "description": "Root CA Certificate present in Rust on Apple 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Rust using Rustls crate on Apple",
+          "short_name": "Rust on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in Rustls crate 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Rustls (Rust crate) using webpki-roots",
+          "short_name": "Rustls crate"
+        },
+        {
+          "description": "Root CA Certificate present in Web PKI crate 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "webpki (Rust crate)",
+          "short_name": "Web PKI crate"
+        },
+        {
+          "description": "Root CA Certificate present in libcurl on Windows 2022.05.03 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "libcurl on Windows",
+          "short_name": "libcurl on Windows"
+        },
+        {
+          "description": "Root CA Certificate present in libcurl on Linux 2022.05.03 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "libcurl on Linux",
+          "short_name": "libcurl on Linux"
+        },
+        {
+          "description": "Root CA Certificate present in libcurl on Apple 2022.05.03 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "libcurl on Apple",
+          "short_name": "libcurl on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in Elixir on Windows 2022.05.03 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Elixir on Windows",
+          "short_name": "Elixir on Windows"
+        },
+        {
+          "description": "Root CA Certificate present in Elixir on Linux 2022.05.03 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Elixir on Linux",
+          "short_name": "Elixir on Linux"
+        },
+        {
+          "description": "Root CA Certificate present in Elixir on Apple 2022.05.03 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Elixir on Apple",
+          "short_name": "Elixir on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in elixir-mint 2022.05.03 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Mint (elixir package)",
+          "short_name": "elixir-mint"
+        },
+        {
+          "description": "Root CA Certificate present in Elixir Phoenix on Windows 2022.05.03 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Phoenix (elixir package) on Windows",
+          "short_name": "Elixir Phoenix on Windows"
+        },
+        {
+          "description": "Root CA Certificate present in Elixir Phoenix on Linux 2022.05.03 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Phoenix (elixir package) on Linux",
+          "short_name": "Elixir Phoenix on Linux"
+        },
+        {
+          "description": "Root CA Certificate present in Elixir Phoenix on Apple 2022.05.03 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Phoenix (elixir package) on Apple",
+          "short_name": "Elixir Phoenix on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in Firefox 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Mozilla Firefox",
+          "short_name": "Firefox"
+        },
+        {
+          "description": "Root CA Certificate present in Tor 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Tor Web Browser",
+          "short_name": "Tor"
+        },
+        {
+          "description": "Root CA Certificate present in Chromium 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Chromium Browser",
+          "short_name": "Chromium"
+        },
+        {
+          "description": "Root CA Certificate present in Chrome 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Google Chrome",
+          "short_name": "Chrome"
+        },
+        {
+          "description": "Root CA Certificate present in Edge 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Microsoft Edge",
+          "short_name": "Edge"
+        },
+        {
+          "description": "Root CA Certificate present in Brave 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Brave Browser",
+          "short_name": "Brave"
+        },
+        {
+          "description": "Root CA Certificate present in Opera 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Opera Browser",
+          "short_name": "Opera"
+        },
+        {
+          "description": "Root CA Certificate present in Vivaldi 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Vivaldi Browser",
+          "short_name": "Vivaldi"
+        },
+        {
+          "description": "Root CA Certificate present in Silk 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Amazon Silk",
+          "short_name": "Silk"
+        },
+        {
+          "description": "Root CA Certificate present in Samsung 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Samsung Internet",
+          "short_name": "Samsung"
+        },
+        {
+          "description": "No Root CA Certificate in the Yandex Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Yandex",
+          "short_name": "Yandex"
+        },
+        {
+          "description": "Root CA Certificate present in Safari 2022.04.29 Trust Store",
+          "exists": true,
+          "expired": false,
+          "is_trusted": true,
+          "name": "Apple Safari",
+          "short_name": "Safari"
+        }
+      ],
+      "certificate_type": "Root CA",
+      "certificate_valid": true,
+      "certificate_validation_oid": "",
+      "certificate_validation_type": "",
+      "certificate_version": 2,
+      "certification_authority_authorization": false,
+      "client_certificate_expected": false,
+      "client_renegotiation": false,
+      "compliance_results": {
+        "fips_ca_trust": false,
+        "fips_weak_key": true,
+        "nist_ca_trust": false,
+        "nist_weak_key": true,
+        "pci_ca_trust": false,
+        "pci_weak_key": true
+      },
+      "compression_support": false,
+      "dnssec": false,
+      "dnssec_algorithm": "",
+      "expiry_status": "Expires in 4779 days (13 years)",
+      "forward_anonymity": false,
+      "host": "",
+      "http1_1_support": false,
+      "http1_support": false,
+      "http2_cleartext_support": false,
+      "http2_support": false,
+      "http_coep": false,
+      "http_coop": false,
+      "http_corp": false,
+      "http_csp": false,
+      "http_expect_ct_report_uri": false,
+      "http_hsts": false,
+      "http_nosniff": false,
+      "http_status_code": 0,
+      "http_unsafe_referrer": false,
+      "http_xfo": false,
+      "http_xss_protection": false,
+      "negotiated_cipher": "",
+      "negotiated_cipher_bits": 0,
+      "negotiated_protocol": "",
+      "offered_ciphers": [],
+      "offered_tls_versions": [],
+      "peer_address": "",
+      "port": 443,
+      "possible_phish_or_malicious": false,
+      "preferred_protocol": "",
+      "revocation_crlite": false,
+      "revocation_ocsp_must_staple": false,
+      "revocation_ocsp_reason": "",
+      "revocation_ocsp_response": "",
+      "revocation_ocsp_stapling": false,
+      "revocation_ocsp_status": "",
+      "revocation_ocsp_time": "",
+      "scsv": false,
+      "session_resumption_caching": false,
+      "session_resumption_ticket_hint": false,
+      "session_resumption_tickets": false,
+      "sni_support": false,
+      "strong_cipher": false,
+      "tls_long_handshake_intolerance": false,
+      "tls_version_interference": false,
+      "tls_version_interference_versions": [],
+      "tls_version_intolerance": false,
+      "tls_version_intolerance_versions": [],
+      "tlsa": false,
+      "trust_android": false,
+      "trust_android_status": "Android 2.2 (Froyo) 2010 Not Present\nAndroid 2.3 (Gingerbread) 2010 Not Present\nAndroid 3 (Honeycomb) 2011 Not Present\nAndroid 4 (Ice Cream Sandwich) 2011 Not Present\nAndroid 4.4 (KitKat) 2013 Not Present\nAndroid 7 (Nougat) 2016 Not Present\nAndroid 8 (Oreo) 2017 Trusted\nAndroid 9 (Pie) 2018 Trusted\nAndroid 10 (Quince Tart) 2019 Trusted\nAndroid 11 (Red Velvet Cake) 2020 Trusted\nAndroid 12 (Snow Cone) 2021 Trusted\nAndroid 13 (Tiramisu) 2022 Trusted\nAndroid 13 (Tiramisu) 2022 Trusted",
+      "trust_bsd": true,
+      "trust_bsd_status": "Root CA Certificate present in OpenBSD 2022.04.29 Trust Store\nRoot CA Certificate present in FreeBSD 2022.04.29 Trust Store",
+      "trust_ccadb": true,
+      "trust_ccadb_status": "Root CA Certificate present in CCADB 2022.04.29 Trust Store (Mozilla, Microsoft, and Apple)",
+      "trust_certifi": true,
+      "trust_certifi_status": "Root CA Certificate present in certifi certifi==2021.10.08 Trust Store\nRoot CA Certificate present in gocertifi certifi==2021.10.08 Trust Store\nRoot CA Certificate present in erlang-certifi certifi==2021.10.08 Trust Store\nRoot CA Certificate present in ruby-certifi certifi==2021.10.08 Trust Store\nRoot CA Certificate present in node-certifi certifi==2021.10.08 Trust Store",
+      "trust_dart": true,
+      "trust_dart_status": "Root CA Certificate present in Dart 2022.05.03 Trust Store",
+      "trust_elixir": true,
+      "trust_elixir_status": "Root CA Certificate present in Elixir on Windows 2022.05.03 Trust Store\nRoot CA Certificate present in Elixir on Linux 2022.05.03 Trust Store\nRoot CA Certificate present in Elixir on Apple 2022.05.03 Trust Store\nRoot CA Certificate present in elixir-mint 2022.05.03 Trust Store",
+      "trust_erlang": true,
+      "trust_erlang_status": "Root CA Certificate present in Erlang on Windows 2022.04.29 Trust Store\nRoot CA Certificate present in Erlang on Linux 2022.04.29 Trust Store\nRoot CA Certificate present in Erlang on Apple 2022.04.29 Trust Store",
+      "trust_go": true,
+      "trust_go_status": "Root CA Certificate present in Go on Windows 2022.04.29 Trust Store\nRoot CA Certificate present in Go on Linux 2022.04.29 Trust Store\nRoot CA Certificate present in Go on Apple 2022.04.29 Trust Store",
+      "trust_java": true,
+      "trust_java_status": "Root CA Certificate present in Java SE java 18.0.1 2022-04-19 Trust Store",
+      "trust_libcurl": true,
+      "trust_libcurl_status": "Root CA Certificate present in libcurl on Windows 2022.05.03 Trust Store\nRoot CA Certificate present in libcurl on Linux 2022.05.03 Trust Store\nRoot CA Certificate present in libcurl on Apple 2022.05.03 Trust Store",
+      "trust_linux": true,
+      "trust_linux_status": "Root CA Certificate present in Arch Linux 2022.04.29 Trust Store\nRoot CA Certificate present in Fedora 2022.04.29 Trust Store\nRoot CA Certificate present in Debian 2022.04.29 Trust Store\nRoot CA Certificate present in Ubuntu 2022.04.29 Trust Store\nRoot CA Certificate present in Alpine 2022.04.29 Trust Store\nRoot CA Certificate present in Centos 2022.04.29 Trust Store\nRoot CA Certificate present in RHEL 2022.04.29 Trust Store",
+      "trust_node": true,
+      "trust_node_status": "Root CA Certificate present in Node.js on Windows 2022.04.29 Trust Store\nRoot CA Certificate present in Node.js on Linux 2022.04.29 Trust Store\nRoot CA Certificate present in Node.js on Apple 2022.04.29 Trust Store",
+      "trust_ruby": true,
+      "trust_ruby_status": "Root CA Certificate present in Ruby on Windows 2022.04.29 Trust Store\nRoot CA Certificate present in Ruby on Linux 2022.04.29 Trust Store\nRoot CA Certificate present in Ruby on Apple 2022.04.29 Trust Store",
+      "trust_russia": false,
+      "trust_russia_status": "No Root CA Certificate in the Russian Trust Store",
+      "trust_rustls": true,
+      "trust_rustls_status": "Root CA Certificate present in Rust on Windows 2022.04.29 Trust Store\nRoot CA Certificate present in Rust on Linux 2022.04.29 Trust Store\nRoot CA Certificate present in Rust on Apple 2022.04.29 Trust Store\nRoot CA Certificate present in Rustls crate 2022.04.29 Trust Store\nRoot CA Certificate present in Web PKI crate 2022.04.29 Trust Store",
+      "verification_details": [
+        "Your private key is exposed; Attackers in possession of the private key can impersonate the website, eavesdrop on encrypted traffic they have copied, or digitally sign malware on your behalf and distribute to target systems as you identified as the attacker",
+        "PCI DSS version 3.2.1 compliance requires a complete Certificate chain with verified trust anchor",
+        "FIPS 140-2 (NIST SP800-131A transition mode) compliance requires a complete Certificate chain with verified trust anchor and every Certificate must meet the requirements (not just the leaf)",
+        "NIST SP800-131A (strict mode) compliance requires a complete Certificate chain with verified trust anchor"
+      ],
+      "verification_results": {
+        "avoid_known_weak_keys": true,
+        "avoid_known_weak_signature_algorithm": true,
+        "common_name_defined": true,
+        "issued_past_tense": true,
+        "not_expired": true,
+        "not_revoked": true
+      },
+      "weak_cipher": false
+    },
+    {
+      "certificate_authority_key_identifier": null,
+      "certificate_common_name": "DST Root CA X3",
+      "certificate_expired": true,
+      "certificate_extensions": [
+        {
+          "ca": true,
+          "critical": true,
+          "name": "basicConstraints",
+          "path_length": null
+        },
+        {
+          "content_commitment": false,
+          "critical": true,
+          "crl_sign": true,
+          "data_encipherment": false,
+          "digital_signature": false,
+          "keyUsage": ["key_cert_sign", "crl_sign"],
+          "key_agreement": false,
+          "key_cert_sign": true,
+          "key_encipherment": false,
+          "name": "keyUsage"
+        },
+        {
+          "critical": false,
+          "name": "subjectKeyIdentifier",
+          "subjectKeyIdentifier": "c4a7b1a47b2c71fadbe14b9075ffc41560858910"
+        }
+      ],
+      "certificate_intermediate_ca": false,
+      "certificate_is_self_signed": false,
+      "certificate_issuer": "DST Root CA X3",
+      "certificate_issuer_country": null,
+      "certificate_key_compromised": false,
+      "certificate_known_compromised": false,
+      "certificate_md5_fingerprint": "410352dc0ff7501b16f0028eba6f45c5",
+      "certificate_not_after": "2021-09-30T14:01:15",
+      "certificate_not_before": "2000-09-30T21:12:19",
+      "certificate_private_key_pem": "-----BEGIN PRIVATE KEY-----\nMIIBJwIBADANBgkqhkiG9w0BAQEFAASCAREwggENAgEAAoIBAQDfr+mXUAiDV7TM\nYmX2kILsx9MsazDKW+zZw33HQMEYFIvg6DN2SSrjPyFJk6xODq8+SMtl7vzTIQ9l\n0irZMo+M5fd3sBJ7tZXAiaOpuu1zLnoMBjKDon6KFDDNEaDhKji5eQox/VC9gGXf\nt1Fjg8jiiGHqS2GB7FJruaLiSxoon0ijngzaCY4+Fy4e3SDfW8YqiqsuvXCtxQsa\nJZB0csV7aqs01jCJ/+VoE3tUC8jWruxanJIePWSzjMbfv8lBcOwWctUm7DhVOUPQ\n/P0YXEDxl+vVmpuNHbraJbnG2N/BFQI6q9pu8T4u9VwInDzWg2nkEJsZKrYpV+Pl\nPZuf8AJdAgMBAAE=\n-----END PRIVATE KEY-----\n",
+      "certificate_public_key_curve": "",
+      "certificate_public_key_exponent": 65537,
+      "certificate_public_key_size": 2048,
+      "certificate_public_key_type": "RSA",
+      "certificate_root_ca": true,
+      "certificate_san": [],
+      "certificate_serial_number": "34:34:61:66:62:30:38:30:64:36:61:33:32:37:62:61:38:39:33:30:33:39:38:36:32:65:66:38:34:30:36:62",
+      "certificate_serial_number_decimal": 91299735575339953335919266965803778155,
+      "certificate_serial_number_hex": "0x44afb080d6a327ba893039862ef8406b",
+      "certificate_sha1_fingerprint": "dac9024f54d8f6df94935fb1732638ca6ad77c13",
+      "certificate_sha256_fingerprint": "0687260331a72403d909f105e69bcf0d32e1bd2493ffc6d9206d11bcd6770739",
+      "certificate_signature_algorithm": "sha1WithRSAEncryption",
+      "certificate_spki_fingerprint": "563b3caf8cfef34c2335caf560a7a95906e8488462eb75ac59784830df9e5b2b",
+      "certificate_subject": "/O=Digital Signature Trust Co./CN=DST Root CA X3",
+      "certificate_subject_key_identifier": "c4a7b1a47b2c71fadbe14b9075ffc41560858910",
+      "certificate_trust": [
+        {
+          "description": "No Root CA Certificate in the Java SE Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Java(TM) SE Runtime Environment",
+          "short_name": "Java SE"
+        },
+        {
+          "description": "No Root CA Certificate in the CCADB Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Common Certificate Authority Database (CCADB)",
+          "short_name": "CCADB"
+        },
+        {
+          "description": "No Root CA Certificate in the Rust Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Rustls (curated CCADB)",
+          "short_name": "Rust"
+        },
+        {
+          "description": "Root CA Certificate present in Google android_latest Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Google Trust Services",
+          "short_name": "Google"
+        },
+        {
+          "description": "No Root CA Certificate in the Android 2.2 Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Android 2.2 (Froyo) 2010",
+          "short_name": "Android 2.2"
+        },
+        {
+          "description": "Root CA Certificate present in Android 2.3 android_2_3 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android 2.3 (Gingerbread) 2010",
+          "short_name": "Android 2.3"
+        },
+        {
+          "description": "Root CA Certificate present in Android 3 android_3 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android 3 (Honeycomb) 2011",
+          "short_name": "Android 3"
+        },
+        {
+          "description": "Root CA Certificate present in Android 4 android_4 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android 4 (Ice Cream Sandwich) 2011",
+          "short_name": "Android 4"
+        },
+        {
+          "description": "Root CA Certificate present in Android 4.4 android_4_4 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android 4.4 (KitKat) 2013",
+          "short_name": "Android 4.4"
+        },
+        {
+          "description": "Root CA Certificate present in Android 7 android_7 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android 7 (Nougat) 2016",
+          "short_name": "Android 7"
+        },
+        {
+          "description": "Root CA Certificate present in Android 8 android_8 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android 8 (Oreo) 2017",
+          "short_name": "Android 8"
+        },
+        {
+          "description": "Root CA Certificate present in Android 9 android_9 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android 9 (Pie) 2018",
+          "short_name": "Android 9"
+        },
+        {
+          "description": "Root CA Certificate present in Android 10 android_10 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android 10 (Quince Tart) 2019",
+          "short_name": "Android 10"
+        },
+        {
+          "description": "Root CA Certificate present in Android 11 android_11 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android 11 (Red Velvet Cake) 2020",
+          "short_name": "Android 11"
+        },
+        {
+          "description": "Root CA Certificate present in Android 12 android_12 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android 12 (Snow Cone) 2021",
+          "short_name": "Android 12"
+        },
+        {
+          "description": "Root CA Certificate present in Android 13 android_13 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android 13 (Tiramisu) 2022",
+          "short_name": "Android 13"
+        },
+        {
+          "description": "Root CA Certificate present in Android 14 android_14 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android 14 (Upside Down Cake) 2023",
+          "short_name": "Android 14"
+        },
+        {
+          "description": "Root CA Certificate present in certifi certifi==2021.10.08 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "certifi (Python module)",
+          "short_name": "certifi"
+        },
+        {
+          "description": "No Root CA Certificate in the Russian Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "MinTsifry Rossii",
+          "short_name": "Russian"
+        },
+        {
+          "description": "No Root CA Certificate in the libcurl Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "libcurl",
+          "short_name": "libcurl"
+        },
+        {
+          "description": "Root CA Certificate present in Dart 2022.05.03 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Dart Native",
+          "short_name": "Dart"
+        },
+        {
+          "description": "No Root CA Certificate in the Windows Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Microsoft Windows",
+          "short_name": "Windows"
+        },
+        {
+          "description": "No Root CA Certificate in the Apple Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Apple devices",
+          "short_name": "Apple"
+        },
+        {
+          "description": "No Root CA Certificate in the Arch Linux Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Linux (Arch)",
+          "short_name": "Arch Linux"
+        },
+        {
+          "description": "No Root CA Certificate in the Fedora Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Linux (Fedora)",
+          "short_name": "Fedora"
+        },
+        {
+          "description": "No Root CA Certificate in the Debian Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Linux (Debian)",
+          "short_name": "Debian"
+        },
+        {
+          "description": "No Root CA Certificate in the Ubuntu Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Linux (Ubuntu)",
+          "short_name": "Ubuntu"
+        },
+        {
+          "description": "No Root CA Certificate in the Alpine Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Linux (Apline)",
+          "short_name": "Alpine"
+        },
+        {
+          "description": "No Root CA Certificate in the Centos Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Linux (Centos)",
+          "short_name": "Centos"
+        },
+        {
+          "description": "No Root CA Certificate in the RHEL Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Linux (RHEL)",
+          "short_name": "RHEL"
+        },
+        {
+          "description": "No Root CA Certificate in the OpenBSD Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "OpenBSD",
+          "short_name": "OpenBSD"
+        },
+        {
+          "description": "No Root CA Certificate in the FreeBSD Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "FreeBSD",
+          "short_name": "FreeBSD"
+        },
+        {
+          "description": "Root CA Certificate present in Android FOSS android_latest Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android (open source)",
+          "short_name": "Android FOSS"
+        },
+        {
+          "description": "Root CA Certificate present in Android latest android_latest Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Android (latest Google build)",
+          "short_name": "Android latest"
+        },
+        {
+          "description": "No Root CA Certificate in the Roku Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Roku",
+          "short_name": "Roku"
+        },
+        {
+          "description": "No Root CA Certificate in the Python on Windows Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Python built-in https module on Windows",
+          "short_name": "Python on Windows"
+        },
+        {
+          "description": "No Root CA Certificate in the Python on Linux Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Python built-in https module on Linux",
+          "short_name": "Python on Linux"
+        },
+        {
+          "description": "No Root CA Certificate in the Python on Apple Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Python built-in https module on Apple",
+          "short_name": "Python on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in urllib certifi==2021.10.08 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "urllib (Python module)",
+          "short_name": "urllib"
+        },
+        {
+          "description": "Root CA Certificate present in requests certifi==2021.10.08 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "requests (Python module)",
+          "short_name": "requests"
+        },
+        {
+          "description": "Root CA Certificate present in Django certifi==2021.10.08 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "Django (Python module)",
+          "short_name": "Django"
+        },
+        {
+          "description": "No Root CA Certificate in the Go on Windows Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Go built-in https module on Windows",
+          "short_name": "Go on Windows"
+        },
+        {
+          "description": "No Root CA Certificate in the Go on Linux Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Go built-in https module on Linux",
+          "short_name": "Go on Linux"
+        },
+        {
+          "description": "No Root CA Certificate in the Go on Apple Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Go built-in https module on Apple",
+          "short_name": "Go on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in gocertifi certifi==2021.10.08 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "gocertifi (Go module)",
+          "short_name": "gocertifi"
+        },
+        {
+          "description": "No Root CA Certificate in the Erlang on Windows Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Erlang built-in https module on Windows",
+          "short_name": "Erlang on Windows"
+        },
+        {
+          "description": "No Root CA Certificate in the Erlang on Linux Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Erlang built-in https module on Linux",
+          "short_name": "Erlang on Linux"
+        },
+        {
+          "description": "No Root CA Certificate in the Erlang on Apple Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Erlang built-in https module on Apple",
+          "short_name": "Erlang on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in erlang-certifi certifi==2021.10.08 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "certifi (Erlang library)",
+          "short_name": "erlang-certifi"
+        },
+        {
+          "description": "No Root CA Certificate in the Ruby on Windows Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Ruby built-in https module on Windows",
+          "short_name": "Ruby on Windows"
+        },
+        {
+          "description": "No Root CA Certificate in the Ruby on Linux Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Ruby built-in https module on Linux",
+          "short_name": "Ruby on Linux"
+        },
+        {
+          "description": "No Root CA Certificate in the Ruby on Apple Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Ruby built-in https module on Apple",
+          "short_name": "Ruby on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in ruby-certifi certifi==2021.10.08 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "certifi (Ruby gem)",
+          "short_name": "ruby-certifi"
+        },
+        {
+          "description": "No Root CA Certificate in the Node.js on Windows Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Node.js built-in https module on Windows",
+          "short_name": "Node.js on Windows"
+        },
+        {
+          "description": "No Root CA Certificate in the Node.js on Linux Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Node.js built-in https module on Linux",
+          "short_name": "Node.js on Linux"
+        },
+        {
+          "description": "No Root CA Certificate in the Node.js on Apple Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Node.js built-in https module on Apple",
+          "short_name": "Node.js on Apple"
+        },
+        {
+          "description": "Root CA Certificate present in node-certifi certifi==2021.10.08 Trust Store EXPIRED",
+          "exists": true,
+          "expired": true,
+          "is_trusted": false,
+          "name": "certifi (Node.js package)",
+          "short_name": "node-certifi"
+        },
+        {
+          "description": "No Root CA Certificate in the Rust on Windows Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Rust using Rustls crate on Windows",
+          "short_name": "Rust on Windows"
+        },
+        {
+          "description": "No Root CA Certificate in the Rust on Linux Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Rust using Rustls crate on Linux",
+          "short_name": "Rust on Linux"
+        },
+        {
+          "description": "No Root CA Certificate in the Rust on Apple Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Rust using Rustls crate on Apple",
+          "short_name": "Rust on Apple"
+        },
+        {
+          "description": "No Root CA Certificate in the Rustls crate Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Rustls (Rust crate) using webpki-roots",
+          "short_name": "Rustls crate"
+        },
+        {
+          "description": "No Root CA Certificate in the Web PKI crate Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "webpki (Rust crate)",
+          "short_name": "Web PKI crate"
+        },
+        {
+          "description": "No Root CA Certificate in the libcurl on Windows Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "libcurl on Windows",
+          "short_name": "libcurl on Windows"
+        },
+        {
+          "description": "No Root CA Certificate in the libcurl on Linux Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "libcurl on Linux",
+          "short_name": "libcurl on Linux"
+        },
+        {
+          "description": "No Root CA Certificate in the libcurl on Apple Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "libcurl on Apple",
+          "short_name": "libcurl on Apple"
+        },
+        {
+          "description": "No Root CA Certificate in the Elixir on Windows Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Elixir on Windows",
+          "short_name": "Elixir on Windows"
+        },
+        {
+          "description": "No Root CA Certificate in the Elixir on Linux Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Elixir on Linux",
+          "short_name": "Elixir on Linux"
+        },
+        {
+          "description": "No Root CA Certificate in the Elixir on Apple Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Elixir on Apple",
+          "short_name": "Elixir on Apple"
+        },
+        {
+          "description": "No Root CA Certificate in the elixir-mint Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Mint (elixir package)",
+          "short_name": "elixir-mint"
+        },
+        {
+          "description": "No Root CA Certificate in the Elixir Phoenix on Windows Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Phoenix (elixir package) on Windows",
+          "short_name": "Elixir Phoenix on Windows"
+        },
+        {
+          "description": "No Root CA Certificate in the Elixir Phoenix on Linux Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Phoenix (elixir package) on Linux",
+          "short_name": "Elixir Phoenix on Linux"
+        },
+        {
+          "description": "No Root CA Certificate in the Elixir Phoenix on Apple Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Phoenix (elixir package) on Apple",
+          "short_name": "Elixir Phoenix on Apple"
+        },
+        {
+          "description": "No Root CA Certificate in the Firefox Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Mozilla Firefox",
+          "short_name": "Firefox"
+        },
+        {
+          "description": "No Root CA Certificate in the Tor Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Tor Web Browser",
+          "short_name": "Tor"
+        },
+        {
+          "description": "No Root CA Certificate in the Chromium Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Chromium Browser",
+          "short_name": "Chromium"
+        },
+        {
+          "description": "No Root CA Certificate in the Chrome Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Google Chrome",
+          "short_name": "Chrome"
+        },
+        {
+          "description": "No Root CA Certificate in the Edge Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Microsoft Edge",
+          "short_name": "Edge"
+        },
+        {
+          "description": "No Root CA Certificate in the Brave Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Brave Browser",
+          "short_name": "Brave"
+        },
+        {
+          "description": "No Root CA Certificate in the Opera Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Opera Browser",
+          "short_name": "Opera"
+        },
+        {
+          "description": "No Root CA Certificate in the Vivaldi Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Vivaldi Browser",
+          "short_name": "Vivaldi"
+        },
+        {
+          "description": "No Root CA Certificate in the Silk Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Amazon Silk",
+          "short_name": "Silk"
+        },
+        {
+          "description": "No Root CA Certificate in the Samsung Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Samsung Internet",
+          "short_name": "Samsung"
+        },
+        {
+          "description": "No Root CA Certificate in the Yandex Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Yandex",
+          "short_name": "Yandex"
+        },
+        {
+          "description": "No Root CA Certificate in the Safari Trust Store",
+          "exists": false,
+          "is_trusted": false,
+          "name": "Apple Safari",
+          "short_name": "Safari"
+        }
+      ],
+      "certificate_type": "Root CA",
+      "certificate_valid": false,
+      "certificate_validation_oid": "",
+      "certificate_validation_type": "",
+      "certificate_version": 2,
+      "certification_authority_authorization": false,
+      "client_certificate_expected": false,
+      "client_renegotiation": false,
+      "compliance_results": {
+        "fips_ca_trust": false,
+        "fips_weak_key": true,
+        "nist_ca_trust": false,
+        "nist_weak_key": true,
+        "pci_ca_trust": false,
+        "pci_weak_key": true
+      },
+      "compression_support": false,
+      "dnssec": false,
+      "dnssec_algorithm": "",
+      "expiry_status": "Expired 216 days ago",
+      "forward_anonymity": false,
+      "host": "",
+      "http1_1_support": false,
+      "http1_support": false,
+      "http2_cleartext_support": false,
+      "http2_support": false,
+      "http_coep": false,
+      "http_coop": false,
+      "http_corp": false,
+      "http_csp": false,
+      "http_expect_ct_report_uri": false,
+      "http_hsts": false,
+      "http_nosniff": false,
+      "http_status_code": 0,
+      "http_unsafe_referrer": false,
+      "http_xfo": false,
+      "http_xss_protection": false,
+      "negotiated_cipher": "",
+      "negotiated_cipher_bits": 0,
+      "negotiated_protocol": "",
+      "offered_ciphers": [],
+      "offered_tls_versions": [],
+      "peer_address": "",
+      "port": 443,
+      "possible_phish_or_malicious": false,
+      "preferred_protocol": "",
+      "revocation_crlite": false,
+      "revocation_ocsp_must_staple": false,
+      "revocation_ocsp_reason": "",
+      "revocation_ocsp_response": "",
+      "revocation_ocsp_stapling": false,
+      "revocation_ocsp_status": "",
+      "revocation_ocsp_time": "",
+      "scsv": false,
+      "session_resumption_caching": false,
+      "session_resumption_ticket_hint": false,
+      "session_resumption_tickets": false,
+      "sni_support": false,
+      "strong_cipher": false,
+      "tls_long_handshake_intolerance": false,
+      "tls_version_interference": false,
+      "tls_version_interference_versions": [],
+      "tls_version_intolerance": false,
+      "tls_version_intolerance_versions": [],
+      "tlsa": false,
+      "trust_android": false,
+      "trust_android_status": "Android 2.2 (Froyo) 2010 Not Present\nAndroid 2.3 (Gingerbread) 2010 Not Trusted EXPIRED\nAndroid 3 (Honeycomb) 2011 Not Trusted EXPIRED\nAndroid 4 (Ice Cream Sandwich) 2011 Not Trusted EXPIRED\nAndroid 4.4 (KitKat) 2013 Not Trusted EXPIRED\nAndroid 7 (Nougat) 2016 Not Trusted EXPIRED\nAndroid 8 (Oreo) 2017 Not Trusted EXPIRED\nAndroid 9 (Pie) 2018 Not Trusted EXPIRED\nAndroid 10 (Quince Tart) 2019 Not Trusted EXPIRED\nAndroid 11 (Red Velvet Cake) 2020 Not Trusted EXPIRED\nAndroid 12 (Snow Cone) 2021 Not Trusted EXPIRED\nAndroid 13 (Tiramisu) 2022 Not Trusted EXPIRED\nAndroid 13 (Tiramisu) 2022 Not Trusted EXPIRED",
+      "trust_bsd": false,
+      "trust_bsd_status": "No Root CA Certificate in the OpenBSD Trust Store\nNo Root CA Certificate in the FreeBSD Trust Store",
+      "trust_ccadb": false,
+      "trust_ccadb_status": "No Root CA Certificate in the CCADB Trust Store",
+      "trust_certifi": false,
+      "trust_certifi_status": "Root CA Certificate present in certifi certifi==2021.10.08 Trust Store EXPIRED\nRoot CA Certificate present in gocertifi certifi==2021.10.08 Trust Store EXPIRED\nRoot CA Certificate present in erlang-certifi certifi==2021.10.08 Trust Store EXPIRED\nRoot CA Certificate present in ruby-certifi certifi==2021.10.08 Trust Store EXPIRED\nRoot CA Certificate present in node-certifi certifi==2021.10.08 Trust Store EXPIRED",
+      "trust_dart": false,
+      "trust_dart_status": "Root CA Certificate present in Dart 2022.05.03 Trust Store EXPIRED",
+      "trust_elixir": false,
+      "trust_elixir_status": "No Root CA Certificate in the Elixir on Windows Trust Store\nNo Root CA Certificate in the Elixir on Linux Trust Store\nNo Root CA Certificate in the Elixir on Apple Trust Store\nNo Root CA Certificate in the elixir-mint Trust Store",
+      "trust_erlang": false,
+      "trust_erlang_status": "No Root CA Certificate in the Erlang on Windows Trust Store\nNo Root CA Certificate in the Erlang on Linux Trust Store\nNo Root CA Certificate in the Erlang on Apple Trust Store",
+      "trust_go": false,
+      "trust_go_status": "No Root CA Certificate in the Go on Windows Trust Store\nNo Root CA Certificate in the Go on Linux Trust Store\nNo Root CA Certificate in the Go on Apple Trust Store",
+      "trust_java": false,
+      "trust_java_status": "No Root CA Certificate in the Java SE Trust Store",
+      "trust_libcurl": false,
+      "trust_libcurl_status": "No Root CA Certificate in the libcurl on Windows Trust Store\nNo Root CA Certificate in the libcurl on Linux Trust Store\nNo Root CA Certificate in the libcurl on Apple Trust Store",
+      "trust_linux": false,
+      "trust_linux_status": "No Root CA Certificate in the Arch Linux Trust Store\nNo Root CA Certificate in the Fedora Trust Store\nNo Root CA Certificate in the Debian Trust Store\nNo Root CA Certificate in the Ubuntu Trust Store\nNo Root CA Certificate in the Alpine Trust Store\nNo Root CA Certificate in the Centos Trust Store\nNo Root CA Certificate in the RHEL Trust Store",
+      "trust_node": false,
+      "trust_node_status": "No Root CA Certificate in the Node.js on Windows Trust Store\nNo Root CA Certificate in the Node.js on Linux Trust Store\nNo Root CA Certificate in the Node.js on Apple Trust Store",
+      "trust_ruby": false,
+      "trust_ruby_status": "No Root CA Certificate in the Ruby on Windows Trust Store\nNo Root CA Certificate in the Ruby on Linux Trust Store\nNo Root CA Certificate in the Ruby on Apple Trust Store",
+      "trust_russia": false,
+      "trust_russia_status": "No Root CA Certificate in the Russian Trust Store",
+      "trust_rustls": false,
+      "trust_rustls_status": "No Root CA Certificate in the Rust on Windows Trust Store\nNo Root CA Certificate in the Rust on Linux Trust Store\nNo Root CA Certificate in the Rust on Apple Trust Store\nNo Root CA Certificate in the Rustls crate Trust Store\nNo Root CA Certificate in the Web PKI crate Trust Store",
+      "verification_details": [
+        "Expired 216 days ago",
+        "The use of SHA1 with RSA Encryption is considered vulnerable. Macquarie University Australia 2009: identified vulnerabilities to collision attacks, later in 2017 Marc Stevens demonstrated collision proofs",
+        "Your private key is exposed; Attackers in possession of the private key can impersonate the website, eavesdrop on encrypted traffic they have copied, or digitally sign malware on your behalf and distribute to target systems as you identified as the attacker",
+        "PCI DSS version 3.2.1 compliance requires a complete Certificate chain with verified trust anchor",
+        "FIPS 140-2 (NIST SP800-131A transition mode) compliance requires a complete Certificate chain with verified trust anchor and every Certificate must meet the requirements (not just the leaf)",
+        "NIST SP800-131A (strict mode) compliance requires a complete Certificate chain with verified trust anchor"
+      ],
+      "verification_results": {
+        "avoid_known_weak_keys": true,
+        "avoid_known_weak_signature_algorithm": false,
+        "common_name_defined": true,
+        "issued_past_tense": true,
+        "not_expired": false,
+        "not_revoked": true
+      },
+      "weak_cipher": false
+    },
+    {
+      "certificate_authority_key_identifier": "142eb317b75856cbae500940e61faf9d8b14c2c6",
+      "certificate_chain_valid": true,
+      "certificate_chain_validation_result": "Validated: digital_signature,key_encipherment,server_auth",
+      "certificate_common_name": "stency.io",
+      "certificate_expired": false,
+      "certificate_extensions": [
+        {
+          "content_commitment": false,
+          "critical": true,
+          "crl_sign": false,
+          "data_encipherment": false,
+          "digital_signature": true,
+          "keyUsage": ["digital_signature", "key_encipherment"],
+          "key_agreement": false,
+          "key_cert_sign": false,
+          "key_encipherment": true,
+          "name": "keyUsage"
+        },
+        {
+          "critical": false,
+          "extendedKeyUsage": ["serverAuth", "clientAuth"],
+          "name": "extendedKeyUsage"
+        },
+        {
+          "ca": false,
+          "critical": true,
+          "name": "basicConstraints",
+          "path_length": null
+        },
+        {
+          "critical": false,
+          "name": "subjectKeyIdentifier",
+          "subjectKeyIdentifier": "8c639b7d7bba910540d274b645ee8f684724fe84"
+        },
+        {
+          "authorityKeyIdentifier": "142eb317b75856cbae500940e61faf9d8b14c2c6",
+          "authority_cert_issuer": "",
+          "authority_cert_serial_number": null,
+          "critical": false,
+          "name": "authorityKeyIdentifier"
+        },
+        {
+          "authorityInfoAccess": [
+            {
+              "access_location": "http://r3.o.lencr.org",
+              "access_method": "OCSP"
+            },
+            {
+              "access_location": "http://r3.i.lencr.org/",
+              "access_method": "caIssuers"
+            }
+          ],
+          "critical": false,
+          "name": "authorityInfoAccess"
+        },
+        {
+          "critical": false,
+          "name": "subjectAltName",
+          "subjectAltName": ["ropware.com", "stency.io"]
+        },
+        {
+          "critical": false,
+          "name": "certificatePolicies"
+        },
+        {
+          "critical": false,
+          "name": "signedCertificateTimestampList",
+          "signedCertificateTimestampList": [
+            {
+              "log_id": "dfa55eab68824f1f6cadeeb85f4e3e5aeacda212a46a5e8e3b12c020445c2a73",
+              "pre_certificate": true,
+              "timestamp": "2022-04-02 13:20:57.535000",
+              "version": "v1"
+            },
+            {
+              "log_id": "46a555eb75fa912030b5a28969f4f37d112c4174befd49b885abf2fc70fe6d47",
+              "pre_certificate": true,
+              "timestamp": "2022-04-02 13:20:57.572000",
+              "version": "v1"
+            }
+          ]
+        }
+      ],
+      "certificate_intermediate_ca": false,
+      "certificate_is_self_signed": false,
+      "certificate_issuer": "R3",
+      "certificate_issuer_country": "US",
+      "certificate_key_compromised": false,
+      "certificate_known_compromised": false,
+      "certificate_md5_fingerprint": "887ad92b2a7507f5c8ee6e17cc94af16",
+      "certificate_not_after": "2022-07-01T12:20:56",
+      "certificate_not_before": "2022-04-02T12:20:57",
+      "certificate_private_key_pem": "-----BEGIN PRIVATE KEY-----\nMIICJwIBADANBgkqhkiG9w0BAQEFAASCAhEwggINAgEAAoICAQDTTerxFSKsc5BK\nEdUMVmUJmfBFtgfvJ/VLCYpiKev3bVtxokj/bm38kpGsxApXtS297zwrrkHDAvT5\nwBvZrSe7oigm2GdkRUsCm31E5whVhmSC+yznPC9egQdEnWzW1TuaHafQnC2B258Q\nNtamPZaVAdV2FqEbiEAgCcxfuqndNw4iQhLDuwN2U+FwKphqltxt8ErAcjgcO7P0\nt8ZAifeyRFvdUY8tki8pTNMibO0z2S9lkxZJcwD1wvMVfEysyKQtQ/tiBWtGSC9b\nJOENncJ6l07H55xi3CTTePkldtKGBwK9vyL9q13cGBmXY2PxngAkpNcF3nUa20dN\nNgPYEiLxoP8lecPqjqUx/CIuli8RKZFg+nMYs/Da/KsrxsH9kedY7kk2wBziWOcC\nAOvSjLLb8B/4hOgkseOMJlZ5AlTksPRh3GveymWCPXf2E/xw5h4LEGRTU1H/Cdab\nMx8a+qGDVafrrdCKS3J1RuGz0kDZXDB2NN4CfHkWURV92t1xhjVSX1zcHCkCTnLG\nHMzuR8YAePOYbjGNgzZSyUD1NuYuoN33h8Jv6yJSVjqmARYBnUJF6BCSCoT8gEvV\nVzHsS/W//jI5kmvLqzo1FKqWSWo5HHJsn+hdm+mxRk8A9MSmkx5h3PJZjWMrH1pu\nW7zd+YQqAsLUjIbAevjE1Ctu+dlZuQIDAQAB\n-----END PRIVATE KEY-----\n",
+      "certificate_public_key_curve": "",
+      "certificate_public_key_exponent": 65537,
+      "certificate_public_key_size": 4096,
+      "certificate_public_key_type": "RSA",
+      "certificate_root_ca": false,
+      "certificate_san": ["ropware.com", "stency.io"],
+      "certificate_serial_number": "30:34:30:35:62:36:65:37:65:31:32:66:63:39:34:32:64:31:37:34:38:65:30:39:34:34:35:61:62:37:30:30:35:65:34:63",
+      "certificate_serial_number_decimal": 350393679044781026862862260675370620575308,
+      "certificate_serial_number_hex": "0x405b6e7e12fc942d1748e09445ab7005e4c",
+      "certificate_sha1_fingerprint": "45e09827ea34c52ab2258de26b0f02ff4efe4585",
+      "certificate_sha256_fingerprint": "667dd03be84c0627a985609e6f630c7958bec292ffd666d218736f6955baeb9a",
+      "certificate_signature_algorithm": "sha256WithRSAEncryption",
+      "certificate_spki_fingerprint": "ecaab390d4632c9a7b7404c5b55af390ec05de26ddcaa1fedaeef7d42927b2b2",
+      "certificate_subject": "/CN=stency.io",
+      "certificate_subject_key_identifier": "8c639b7d7bba910540d274b645ee8f684724fe84",
+      "certificate_type": "Leaf Certificate",
+      "certificate_valid": false,
+      "certificate_validation_oid": "2.23.140.1.2.1",
+      "certificate_validation_type": "Domain Validation (DV)",
+      "certificate_version": 2,
+      "certification_authority_authorization": false,
+      "client_certificate_expected": false,
+      "client_renegotiation": false,
+      "compliance_results": {
+        "fips_weak_cipher": false,
+        "fips_weak_key": true,
+        "fips_weak_protocol": true,
+        "nist_mtls": false,
+        "nist_weak_cipher": false,
+        "nist_weak_key": true,
+        "nist_weak_protocol": true,
+        "pci_deprecated_algo": true,
+        "pci_vuln_compression": true,
+        "pci_vuln_renegotiation": true,
+        "pci_vuln_session_resumption": false,
+        "pci_weak_cipher": true,
+        "pci_weak_key": true,
+        "pci_weak_protocol": true
+      },
+      "compression_support": false,
+      "dnssec": false,
+      "dnssec_algorithm": "",
+      "expiry_status": "Expires in 58 days",
+      "forward_anonymity": true,
+      "host": "stency.io",
+      "http1_1_support": true,
+      "http1_support": false,
+      "http2_cleartext_support": false,
+      "http2_support": true,
+      "http_coep": false,
+      "http_coop": false,
+      "http_corp": false,
+      "http_csp": false,
+      "http_expect_ct_report_uri": false,
+      "http_hsts": false,
+      "http_nosniff": false,
+      "http_status_code": 200,
+      "http_unsafe_referrer": false,
+      "http_xfo": false,
+      "http_xss_protection": false,
+      "negotiated_cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+      "negotiated_cipher_bits": 256,
+      "negotiated_protocol": "TLSv1.2 (0x303)",
+      "offered_ciphers": [
+        "TLS_AES_256_GCM_SHA384",
+        "TLS_CHACHA20_POLY1305_SHA256",
+        "TLS_AES_128_GCM_SHA256",
+        "ECDHE-ECDSA-AES256-GCM-SHA384",
+        "ECDHE-RSA-AES256-GCM-SHA384",
+        "DHE-RSA-AES256-GCM-SHA384",
+        "ECDHE-ECDSA-CHACHA20-POLY1305",
+        "ECDHE-RSA-CHACHA20-POLY1305",
+        "DHE-RSA-CHACHA20-POLY1305",
+        "ECDHE-ECDSA-AES128-GCM-SHA256",
+        "ECDHE-RSA-AES128-GCM-SHA256",
+        "DHE-RSA-AES128-GCM-SHA256",
+        "ECDHE-ECDSA-AES256-SHA384",
+        "ECDHE-RSA-AES256-SHA384",
+        "DHE-RSA-AES256-SHA256",
+        "ECDHE-ECDSA-AES128-SHA256",
+        "ECDHE-RSA-AES128-SHA256",
+        "DHE-RSA-AES128-SHA256",
+        "ECDHE-ECDSA-AES256-SHA",
+        "ECDHE-RSA-AES256-SHA",
+        "DHE-RSA-AES256-SHA",
+        "ECDHE-ECDSA-AES128-SHA",
+        "ECDHE-RSA-AES128-SHA",
+        "DHE-RSA-AES128-SHA",
+        "RSA-PSK-AES256-GCM-SHA384",
+        "DHE-PSK-AES256-GCM-SHA384",
+        "RSA-PSK-CHACHA20-POLY1305",
+        "DHE-PSK-CHACHA20-POLY1305",
+        "ECDHE-PSK-CHACHA20-POLY1305",
+        "AES256-GCM-SHA384",
+        "PSK-AES256-GCM-SHA384",
+        "PSK-CHACHA20-POLY1305",
+        "RSA-PSK-AES128-GCM-SHA256",
+        "DHE-PSK-AES128-GCM-SHA256",
+        "AES128-GCM-SHA256",
+        "PSK-AES128-GCM-SHA256",
+        "AES256-SHA256",
+        "AES128-SHA256",
+        "ECDHE-PSK-AES256-CBC-SHA384",
+        "ECDHE-PSK-AES256-CBC-SHA",
+        "SRP-RSA-AES-256-CBC-SHA",
+        "SRP-AES-256-CBC-SHA",
+        "RSA-PSK-AES256-CBC-SHA384",
+        "DHE-PSK-AES256-CBC-SHA384",
+        "RSA-PSK-AES256-CBC-SHA",
+        "DHE-PSK-AES256-CBC-SHA",
+        "AES256-SHA",
+        "PSK-AES256-CBC-SHA384",
+        "PSK-AES256-CBC-SHA",
+        "ECDHE-PSK-AES128-CBC-SHA256",
+        "ECDHE-PSK-AES128-CBC-SHA",
+        "SRP-RSA-AES-128-CBC-SHA",
+        "SRP-AES-128-CBC-SHA",
+        "RSA-PSK-AES128-CBC-SHA256",
+        "DHE-PSK-AES128-CBC-SHA256",
+        "RSA-PSK-AES128-CBC-SHA",
+        "DHE-PSK-AES128-CBC-SHA",
+        "AES128-SHA",
+        "PSK-AES128-CBC-SHA256",
+        "PSK-AES128-CBC-SHA"
+      ],
+      "offered_tls_versions": ["TLSv1.3 (0x304)", "TLSv1.2 (0x303)"],
+      "peer_address": "54.66.65.48",
+      "port": 443,
+      "possible_phish_or_malicious": false,
+      "preferred_protocol": "TLSv1.3 (0x304)",
+      "revocation_crlite": false,
+      "revocation_ocsp_must_staple": false,
+      "revocation_ocsp_reason": null,
+      "revocation_ocsp_response": "Successful",
+      "revocation_ocsp_stapling": false,
+      "revocation_ocsp_status": "Good",
+      "revocation_ocsp_time": null,
+      "scsv": false,
+      "session_resumption_caching": true,
+      "session_resumption_ticket_hint": false,
+      "session_resumption_tickets": false,
+      "sni_support": true,
+      "strong_cipher": false,
+      "tls_long_handshake_intolerance": false,
+      "tls_version_interference": true,
+      "tls_version_interference_versions": [
+        "TLSv1.1 (0x302)",
+        "TLSv1 (0x301)",
+        "SSLv3 (0x300)",
+        "SSLv2 (0x2ff)"
+      ],
+      "tls_version_intolerance": true,
+      "tls_version_intolerance_versions": [
+        "TLSv1.4 (0x305)",
+        "TLSv1.8 (0x309)",
+        "TLSv2 (0x400)",
+        "TLSv2.1 (0x401)",
+        "TLSv2.3 (0x404)"
+      ],
+      "tlsa": false,
+      "trust_android": false,
+      "trust_android_status": "",
+      "trust_bsd": false,
+      "trust_bsd_status": "",
+      "trust_ccadb": false,
+      "trust_ccadb_status": "",
+      "trust_certifi": false,
+      "trust_certifi_status": "",
+      "trust_dart": false,
+      "trust_dart_status": "",
+      "trust_elixir": false,
+      "trust_elixir_status": "",
+      "trust_erlang": false,
+      "trust_erlang_status": "",
+      "trust_go": false,
+      "trust_go_status": "",
+      "trust_java": false,
+      "trust_java_status": "",
+      "trust_libcurl": false,
+      "trust_libcurl_status": "",
+      "trust_linux": false,
+      "trust_linux_status": "",
+      "trust_node": false,
+      "trust_node_status": "",
+      "trust_ruby": false,
+      "trust_ruby_status": "",
+      "trust_russia": false,
+      "trust_russia_status": "",
+      "trust_rustls": false,
+      "trust_rustls_status": "",
+      "verification_details": [
+        "Your private key is exposed; Attackers in possession of the private key can impersonate the website, eavesdrop on encrypted traffic they have copied, or digitally sign malware on your behalf and distribute to target systems as you identified as the attacker",
+        "This domain is not enabled for DNSSEC (rfc6840), DS and DNSKEY records were not provided",
+        "DV Certificates are favored by attackers and seeing one used raises skepticism. DV Certificates are issued for ease-of-use and not for security purposes, and there are known trivial DNS take-over attacks enabled by DV Certificates. An OV or EV Certificate is the distinct opposite of a DV Certificate, attackers avoid using them, they are issued for security purposes specifically as an effective mitigation to the known DNS take-over attacks.",
+        "This domain is not enabled for CAA verification (rfc8659), CAA DNS records were not provided",
+        "Server preferred protocol TLSv1.3 (0x304) was avoided and TLSv1.2 (0x303) was negotiated instead, consider Signaling Cipher Suite Value (SCSV) for Preventing Protocol Downgrade Attacks (rfc7507)",
+        "Session Resumption (caching) This server has confidentiality vulnerability and a tracking issue affecting privacy; rfc5246 recommends a lifetime of session IDs of less than 24 hours where afterwards the client attempts a resumption and only then the server falls back to a full handshake. The server can link both PSKs to the same user, session resumption caching allows a user identity to be shared with third-party trackers observing traffic on this server. Prior to TLS 1.3 this was a 0-RTT resumption which allows malicious actors to read all of the past communications using the same PSK. The flaw was detailed by rfc5077 in 2008 and web server default configurations have not widely adopted the changes.",
+        "Your server is not configured to accept clients that only support TLS version TLSv1.1 or older, these clients will be shown an error \"ERR_SSL_VERSION_INTERFERENCE\" and not negotiate a secure connection to your server.",
+        "The intermediate Certificate with serial number 0x4001772137d4e942b8ee76aa3c640ab7 has no Authority Key Identifier (AKI) which indicates either it was intended to be the Root CA and was not in the Trust Store, or it may have been issued invalid without an AKI, or the server provided a malformed Certificate. Without an AKI a valid Certificate chain can not be formed and there is not verifiable trust anchor. The Server Certificate is considered invalid, fake, or malicious.",
+        "The intermediate Certificate with serial number 0x4001772137d4e942b8ee76aa3c640ab7 has no Authority Key Identifier (AKI) which indicates either it was intended to be the Root CA and was not in the Trust Store, or it may have been issued invalid without an AKI, or the server provided a malformed Certificate. Without an AKI a valid Certificate chain can not be formed and there is not verifiable trust anchor. The Server Certificate is considered invalid, fake, or malicious.",
+        "PCI DSS version 3.2.1 compliance requires that no known vulnerabilities are present",
+        "FIPS 140-2 (NIST SP800-131A transition mode) compliance requires cipher bits to greater than 160, not be of Anonymous key exchange suites, Exchange ciphers, or many block ciphers",
+        "NIST SP800-131A (strict mode) compliance requires cipher bits to greater than 160, not be of Anonymous key exchange suites, Exchange ciphers, or many block ciphers"
+      ],
+      "verification_results": {
+        "avoid_deprecated_dnssec_algorithms": true,
+        "avoid_deprecated_protocols": true,
+        "avoid_known_weak_keys": true,
+        "avoid_known_weak_signature_algorithm": true,
+        "basic_constraints_ca": true,
+        "certificate_valid_tls_usage": true,
+        "common_name_defined": true,
+        "common_name_valid": true,
+        "issued_past_tense": true,
+        "match_hostname": true,
+        "not_expired": true,
+        "not_revoked": true,
+        "not_self_signed": true,
+        "trusted_ca": false
+      },
+      "weak_cipher": false
+    }
+  ]
+}

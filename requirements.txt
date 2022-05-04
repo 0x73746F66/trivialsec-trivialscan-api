@@ -1,2 +1,2 @@
-trivialscan==2.3.2
+trivialscan==2.3.3
 validators==0.18.2

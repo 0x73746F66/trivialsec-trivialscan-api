@@ -11,7 +11,7 @@ for line in requirements.read_text(encoding='utf8').splitlines():
 
 setup(
     name='trivialscan-api',
-    version='0.0.4',
+    version='0.0.5',
     author='Christopher Langton',
     author_email='chris@trivialsec.com',
     description='Validate the security of your TLS connections so that they deserve your trust.',
